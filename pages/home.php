@@ -144,9 +144,11 @@ foreach ($logoFiles as $file) {
                 <div class="tour-card">
                     <p class="tour-kicker"><?= htmlspecialchars((string) ($tour['title'] ?? 'Rundgang')) ?></p>
                     <iframe
-                        src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
+                        src="about:blank"
+                        data-src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
                         class="tour-iframe"
                         title="<?= htmlspecialchars((string) ($tour['title'] ?? 'Matterport Rundgang')) ?>"
+                        loading="lazy"
                         allow="fullscreen; xr-spatial-tracking;"
                         allowfullscreen
                     ></iframe>
