@@ -23,13 +23,18 @@ $secondaryCtaText = $home['secondary_cta_text'] ?? 'Unsere Fakten';
 $secondaryCtaLink = $home['secondary_cta_link'] ?? '#facts';
 ?>
 <section class="hero">
-    <div class="container">
-        <p class="eyebrow"><?= htmlspecialchars($home['eyebrow'] ?? '360° Rundgänge für moderne Unternehmen') ?></p>
-        <h1><?= htmlspecialchars($home['headline'] ?? 'Mehr Sichtbarkeit. Mehr Vertrauen. Mehr Anfragen.') ?></h1>
-        <p class="hero-copy"><?= htmlspecialchars($home['subline'] ?? 'Visitfy erstellt hochwertige 360°-Erlebnisse für Immobilien, Gastronomie, Hotels und Praxen.') ?></p>
-        <div class="hero-actions">
-            <a class="btn btn-primary" href="<?= htmlspecialchars((string) $primaryCtaLink) ?>"><?= htmlspecialchars((string) $primaryCtaText) ?></a>
-            <a class="btn btn-outline" href="<?= htmlspecialchars((string) $secondaryCtaLink) ?>"><?= htmlspecialchars((string) $secondaryCtaText) ?></a>
+    <div class="hero-bg" aria-hidden="true">
+        <div id="hero-particles" class="hero-particles"></div>
+    </div>
+    <div class="container hero-shell">
+        <div class="hero-glass">
+            <p class="eyebrow"><?= htmlspecialchars($home['eyebrow'] ?? '360° Rundgänge für moderne Unternehmen') ?></p>
+            <h1><?= htmlspecialchars($home['headline'] ?? 'Mehr Sichtbarkeit. Mehr Vertrauen. Mehr Anfragen.') ?></h1>
+            <p class="hero-copy"><?= htmlspecialchars($home['subline'] ?? 'Visitfy erstellt hochwertige 360°-Erlebnisse für Immobilien, Gastronomie, Hotels und Praxen.') ?></p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="<?= htmlspecialchars((string) $primaryCtaLink) ?>"><?= htmlspecialchars((string) $primaryCtaText) ?></a>
+                <a class="btn btn-outline" href="<?= htmlspecialchars((string) $secondaryCtaLink) ?>"><?= htmlspecialchars((string) $secondaryCtaText) ?></a>
+            </div>
         </div>
     </div>
 </section>

@@ -1,4 +1,34 @@
 (() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const createHeroParticles = () => {
+    const layer = document.getElementById('hero-particles');
+    if (!layer) return;
+
+    const shapes = ['sphere', 'triangle', 'diamond'];
+    const particleCount = window.innerWidth < 800 ? 18 : 30;
+
+    for (let i = 0; i < particleCount; i += 1) {
+      const particle = document.createElement('span');
+      const shape = shapes[Math.floor(Math.random() * shapes.length)];
+
+      particle.className = `hero-particle ${shape}`;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.setProperty('--size', `${Math.floor(Math.random() * 18) + 10}px`);
+      particle.style.setProperty('--duration', `${Math.floor(Math.random() * 10) + 10}s`);
+      particle.style.setProperty('--delay', `${(Math.random() * -12).toFixed(2)}s`);
+      particle.style.setProperty('--drift-x', `${Math.floor(Math.random() * 80) - 40}px`);
+      particle.style.setProperty('--drift-y', `${Math.floor(Math.random() * 70) - 35}px`);
+      particle.style.setProperty('--rotate', `${Math.floor(Math.random() * 360)}deg`);
+      layer.appendChild(particle);
+    }
+  };
+
+  if (!reducedMotion) {
+    createHeroParticles();
+  }
+
   const counters = document.querySelectorAll('.counter');
   if (!counters.length) return;
 

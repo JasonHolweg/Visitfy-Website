@@ -10,7 +10,7 @@ declare(strict_types=1);
     <title><?= htmlspecialchars($pageTitle ?? 'Visitfy') ?></title>
     <meta name="description" content="<?= htmlspecialchars($metaDescription ?? '360° Rundgänge von Visitfy') ?>">
     <meta name="robots" content="<?= htmlspecialchars($metaRobots ?? 'index,follow') ?>">
-    <meta name="theme-color" content="#2f7d47">
+    <meta name="theme-color" content="#95c9ff">
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl ?? '') ?>">
 
     <meta property="og:type" content="website">
