@@ -84,7 +84,11 @@ foreach ($logoFiles as $file) {
 ?>
 <section class="hero">
     <div class="hero-bg" aria-hidden="true">
-        <div class="particle-layer" data-particles="30"></div>
+        <div class="particle-layer hero-particles-layer" data-particles="30"></div>
+        <div class="hero-scan-layer">
+            <div class="scan-grid"></div>
+            <div class="scan-beam"></div>
+        </div>
     </div>
     <div class="container hero-shell">
         <div class="hero-glass">

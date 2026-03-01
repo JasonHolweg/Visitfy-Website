@@ -3,7 +3,7 @@
 declare(strict_types=1);
 ?>
 <!doctype html>
-<html lang="de" data-theme="<?= htmlspecialchars((string) ($initialTheme ?? 'light')) ?>" data-default-theme="<?= htmlspecialchars((string) ($defaultThemeMode ?? 'light')) ?>">
+<html lang="de" data-theme="<?= htmlspecialchars((string) ($initialTheme ?? 'light')) ?>" data-default-theme="<?= htmlspecialchars((string) ($defaultThemeMode ?? 'light')) ?>" data-hero-animation="<?= htmlspecialchars((string) ($heroAnimation ?? 'particles')) ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,7 +58,7 @@ declare(strict_types=1);
 <header class="site-header">
     <div class="container nav-wrap">
         <a class="brand" href="index.php" aria-label="Visitfy Startseite">
-            <img src="assets/images/visitfy-logo.svg" alt="Visitfy Logo" loading="eager" fetchpriority="high">
+            <img class="brand-logo" src="assets/images/visitfy-logo.svg" alt="Visitfy Logo" loading="eager" fetchpriority="high">
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menü</button>
         <nav id="main-nav" class="main-nav">

@@ -62,6 +62,10 @@ $defaultThemeMode = (string) ($themeContent['default_mode'] ?? $themeDefaults['d
 if (!in_array($defaultThemeMode, ['light', 'dark', 'auto'], true)) {
     $defaultThemeMode = 'light';
 }
+$heroAnimation = (string) ($themeContent['hero_animation'] ?? 'particles');
+if (!in_array($heroAnimation, ['particles', 'scan'], true)) {
+    $heroAnimation = 'particles';
+}
 $initialTheme = $defaultThemeMode === 'dark' ? 'dark' : 'light';
 $metaThemeColor = $initialTheme === 'dark' ? $themeDark['bg'] : $themeLight['primary'];
 

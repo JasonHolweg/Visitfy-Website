@@ -159,6 +159,7 @@
   },
   "theme": {
     "default_mode": "light",
+    "hero_animation": "particles",
     "light": {
       "bg": "#eef1f5",
       "bg_alt": "#e5ebf3",

@@ -36,6 +36,7 @@ $defaults = [
 
 $theme = [
     'default_mode' => $data['theme']['default_mode'] ?? $defaults['default_mode'],
+    'hero_animation' => $data['theme']['hero_animation'] ?? 'particles',
     'light' => array_merge($defaults['light'], is_array($data['theme']['light'] ?? null) ? $data['theme']['light'] : []),
     'dark' => array_merge($defaults['dark'], is_array($data['theme']['dark'] ?? null) ? $data['theme']['dark'] : []),
 ];
@@ -48,9 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!in_array($defaultMode, ['light', 'dark', 'auto'], true)) {
         $defaultMode = 'light';
     }
+    $heroAnimation = (string) ($_POST['hero_animation'] ?? 'particles');
+    if (!in_array($heroAnimation, ['particles', 'scan'], true)) {
+        $heroAnimation = 'particles';
+    }
 
     $nextTheme = [
         'default_mode' => $defaultMode,
+        'hero_animation' => $heroAnimation,
         'light' => [],
         'dark' => [],
     ];
@@ -94,29 +100,47 @@ function themeVal(array $theme, string $mode, string $key): string
 
         <form class="contact-form" method="post">
             <h2>Darkmode Standard</h2>
-            <select name="default_mode">
-                <option value="light" <?= ($theme['default_mode'] ?? 'light') === 'light' ? 'selected' : '' ?>>Light</option>
-                <option value="dark" <?= ($theme['default_mode'] ?? '') === 'dark' ? 'selected' : '' ?>>Dark</option>
-                <option value="auto" <?= ($theme['default_mode'] ?? '') === 'auto' ? 'selected' : '' ?>>Auto (System)</option>
-            </select>
+            <div class="admin-grid-2">
+                <label>
+                    Theme Startmodus
+                    <select name="default_mode">
+                        <option value="light" <?= ($theme['default_mode'] ?? 'light') === 'light' ? 'selected' : '' ?>>Light</option>
+                        <option value="dark" <?= ($theme['default_mode'] ?? '') === 'dark' ? 'selected' : '' ?>>Dark</option>
+                        <option value="auto" <?= ($theme['default_mode'] ?? '') === 'auto' ? 'selected' : '' ?>>Auto (System)</option>
+                    </select>
+                </label>
+                <label>
+                    Hero Animation
+                    <select name="hero_animation">
+                        <option value="particles" <?= ($theme['hero_animation'] ?? 'particles') === 'particles' ? 'selected' : '' ?>>Floating Particles</option>
+                        <option value="scan" <?= ($theme['hero_animation'] ?? '') === 'scan' ? 'selected' : '' ?>>Scan Grid + Beam</option>
+                    </select>
+                </label>
+            </div>
 
             <h2>Light Theme</h2>
             <div class="admin-grid-2">
                 <?php foreach ($keys as $key): ?>
-                    <label>
-                        <?= htmlspecialchars($key) ?>
-                        <input type="color" name="light_<?= htmlspecialchars($key) ?>" value="<?= themeVal($theme, 'light', $key) ?>">
-                    </label>
+                    <div class="theme-color-row">
+                        <label for="light_<?= htmlspecialchars($key) ?>"><?= htmlspecialchars($key) ?></label>
+                        <div class="theme-color-inputs">
+                            <input id="light_<?= htmlspecialchars($key) ?>" type="color" name="light_<?= htmlspecialchars($key) ?>" value="<?= themeVal($theme, 'light', $key) ?>" data-color-output="light_<?= htmlspecialchars($key) ?>_value">
+                            <input id="light_<?= htmlspecialchars($key) ?>_value" class="color-readout" type="text" value="<?= themeVal($theme, 'light', $key) ?>" readonly>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
             <h2>Dark Theme</h2>
             <div class="admin-grid-2">
                 <?php foreach ($keys as $key): ?>
-                    <label>
-                        <?= htmlspecialchars($key) ?>
-                        <input type="color" name="dark_<?= htmlspecialchars($key) ?>" value="<?= themeVal($theme, 'dark', $key) ?>">
-                    </label>
+                    <div class="theme-color-row">
+                        <label for="dark_<?= htmlspecialchars($key) ?>"><?= htmlspecialchars($key) ?></label>
+                        <div class="theme-color-inputs">
+                            <input id="dark_<?= htmlspecialchars($key) ?>" type="color" name="dark_<?= htmlspecialchars($key) ?>" value="<?= themeVal($theme, 'dark', $key) ?>" data-color-output="dark_<?= htmlspecialchars($key) ?>_value">
+                            <input id="dark_<?= htmlspecialchars($key) ?>_value" class="color-readout" type="text" value="<?= themeVal($theme, 'dark', $key) ?>" readonly>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
@@ -124,5 +148,16 @@ function themeVal(array $theme, string $mode, string $key): string
         </form>
     </div>
 </section>
+<script>
+document.querySelectorAll('input[type=\"color\"][data-color-output]').forEach((picker) => {
+    picker.addEventListener('input', () => {
+        const id = picker.getAttribute('data-color-output');
+        const output = id ? document.getElementById(id) : null;
+        if (output) {
+            output.value = picker.value;
+        }
+    });
+});
+</script>
 </body>
 </html>

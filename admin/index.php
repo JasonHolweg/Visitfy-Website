@@ -20,6 +20,7 @@ requireAdminAuth();
         <div class="admin-links">
             <a class="btn btn-primary" href="kpis.php">KPI Zahlen verwalten</a>
             <a class="btn btn-outline" href="pages.php">Homepage komplett verwalten</a>
+            <a class="btn btn-outline" href="media.php">Bilder Upload</a>
             <a class="btn btn-outline" href="seo.php">SEO & Performance</a>
             <a class="btn btn-outline" href="theme.php">Theme & Darkmode</a>
             <a class="btn" href="logout.php">Logout</a>

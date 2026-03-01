@@ -65,12 +65,17 @@
   const initParticles = () => {
     if (reducedMotion) return;
 
+    const heroAnimation = document.documentElement.dataset.heroAnimation || 'particles';
     const layers = document.querySelectorAll('.particle-layer[data-particles]');
     if (!layers.length) return;
 
     const shapes = ['sphere', 'triangle', 'diamond'];
 
     layers.forEach((layer) => {
+      if (heroAnimation === 'scan' && layer.classList.contains('hero-particles-layer')) {
+        return;
+      }
+
       const desired = Number(layer.getAttribute('data-particles') || '20');
       const particleCount = window.innerWidth < 800 ? Math.max(10, Math.floor(desired * 0.6)) : desired;
 

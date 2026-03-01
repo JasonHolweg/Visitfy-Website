@@ -67,12 +67,33 @@ html[data-theme="dark"] .btn-outline {
   background: rgba(15, 24, 37, 0.62);
 }
 
+html[data-theme="dark"] .btn-primary {
+  color: #f2f7ff;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  color: #f2f7ff;
+  background: rgba(18, 27, 42, 0.75);
+}
+
 html[data-theme="dark"] .logo-marquee {
   background: rgba(12, 18, 28, 0.72);
 }
 
 html[data-theme="dark"] .logo-item {
   filter: grayscale(100%) brightness(1.25);
+}
+
+html[data-theme="dark"] .brand img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(147, 201, 255, 0.4));
+}
+
+html[data-theme="dark"] .scan-grid {
+  opacity: .5;
+}
+
+html[data-theme="dark"] .scan-beam {
+  background: linear-gradient(to bottom, rgba(149, 205, 255, 0), rgba(105, 176, 255, 0.42), rgba(149, 205, 255, 0));
 }
 
 .container {
@@ -115,6 +136,23 @@ html[data-theme="dark"] .logo-item {
   display: block;
   height: 38px;
   width: auto;
+  filter: brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.28));
+  animation: logo-shimmer 12s ease-in-out infinite;
+}
+
+@keyframes logo-shimmer {
+  0%, 72%, 100% {
+    filter: brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.28));
+  }
+  76% {
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(182, 219, 255, 0.75));
+  }
+  80% {
+    filter: brightness(0) invert(1) drop-shadow(0 0 14px rgba(145, 201, 255, 0.92));
+  }
+  84% {
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(182, 219, 255, 0.72));
+  }
 }
 
 .nav-toggle {
@@ -135,6 +173,32 @@ html[data-theme="dark"] .logo-item {
   padding: .45rem .8rem;
   font: inherit;
   cursor: pointer;
+}
+
+.theme-color-row {
+  display: grid;
+  gap: .35rem;
+}
+
+.theme-color-inputs {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: 70px 1fr;
+  align-items: center;
+}
+
+.color-readout {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .02em;
+}
+
+.admin-preview {
+  width: min(260px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin: .2rem 0 .8rem;
 }
 
 .main-nav {
@@ -173,8 +237,8 @@ footer a {
   border-radius: 50%;
   top: -32%;
   right: -20%;
-  background: radial-gradient(circle at 30% 30%, rgba(196, 224, 255, 0.65), rgba(95, 148, 214, 0.15));
-  filter: blur(3px);
+  background: radial-gradient(circle at 30% 30%, rgba(196, 224, 255, 0.72), rgba(95, 148, 214, 0.12));
+  filter: blur(2px);
 }
 
 .hero-bg::after {
@@ -185,12 +249,80 @@ footer a {
   border-radius: 50%;
   bottom: -42%;
   left: -16%;
-  background: radial-gradient(circle at center, rgba(151, 200, 255, 0.3), rgba(117, 166, 223, 0.05));
+  background: radial-gradient(circle at center, rgba(151, 200, 255, 0.36), rgba(117, 166, 223, 0.04));
 }
 
 .particle-layer {
   position: absolute;
   inset: 0;
+}
+
+.hero-particles-layer {
+  mask-image: radial-gradient(circle at 45% 46%, #000 38%, transparent 88%);
+}
+
+.hero-scan-layer {
+  position: absolute;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.scan-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle, rgba(157, 208, 255, 0.56) 1px, transparent 1.5px) 0 0/26px 26px,
+    linear-gradient(120deg, rgba(36, 56, 85, 0.45), rgba(70, 102, 148, 0.18));
+  opacity: .38;
+  filter: blur(.2px);
+}
+
+.scan-grid::before,
+.scan-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(65deg, transparent 0 47%, rgba(171, 214, 255, 0.18) 49%, transparent 52%),
+    linear-gradient(-65deg, transparent 0 47%, rgba(171, 214, 255, 0.14) 49%, transparent 52%);
+  background-size: 120px 120px, 120px 120px;
+  opacity: .55;
+}
+
+.scan-beam {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 23%;
+  background: linear-gradient(to bottom, rgba(193, 229, 255, 0), rgba(142, 204, 255, 0.42), rgba(193, 229, 255, 0));
+  mix-blend-mode: screen;
+  animation: scan-sweep 6.8s ease-in-out infinite;
+}
+
+@keyframes scan-sweep {
+  0%, 100% {
+    transform: translateY(-20%);
+    opacity: .2;
+  }
+  18% {
+    opacity: .6;
+  }
+  50% {
+    transform: translateY(210%);
+    opacity: .85;
+  }
+  80% {
+    opacity: .38;
+  }
+}
+
+html[data-hero-animation="scan"] .hero-particles-layer {
+  display: none;
+}
+
+html[data-hero-animation="scan"] .hero-scan-layer {
+  display: block;
 }
 
 .hero-shell,
@@ -972,7 +1104,9 @@ td {
 
 @media (prefers-reduced-motion: reduce) {
   .particle,
-  .logo-track {
+  .logo-track,
+  .scan-beam,
+  .brand img {
     animation: none;
   }
 }
