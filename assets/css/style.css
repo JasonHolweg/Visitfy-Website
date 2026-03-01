@@ -189,6 +189,26 @@ h1 {
   gap: .6rem;
 }
 
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  font-size: .95rem;
+}
+
+.consent input[type="checkbox"] {
+  width: auto;
+  margin-top: .2rem;
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 input,
 textarea,
 table input {
@@ -225,6 +245,10 @@ td {
 
 .success { color: #225f34; }
 .error { color: #8b1d1d; }
+.field-error {
+  margin: -.25rem 0 .1rem;
+  font-size: .9rem;
+}
 
 @media (max-width: 760px) {
   .nav-wrap {
