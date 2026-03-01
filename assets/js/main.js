@@ -132,8 +132,29 @@
     counters.forEach((counter) => observer.observe(counter));
   };
 
+  const initScrollReveal = () => {
+    const sections = document.querySelectorAll('.anim-section');
+    if (!sections.length) return;
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      sections.forEach((section) => section.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+
+    sections.forEach((section) => observer.observe(section));
+  };
+
   initThemeToggle();
   initMobileNav();
   initParticles();
+  initScrollReveal();
   initCounters();
 })();

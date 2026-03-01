@@ -12,6 +12,9 @@
   --glass-highlight: rgba(255, 255, 255, 0.72);
   --particle-dark-a: rgba(17, 27, 43, 0.46);
   --particle-dark-b: rgba(34, 48, 75, 0.42);
+  --reveal-duration-main: 1.35s;
+  --reveal-duration-side: 2.1s;
+  --reveal-ease: cubic-bezier(0.2, 0.65, 0.16, 1);
 }
 
 * {
@@ -543,6 +546,88 @@ h1 {
   padding: 1.2rem 0 2.6rem;
 }
 
+.anim-section {
+  overflow-x: clip;
+}
+
+.anim-section .reveal,
+.anim-section .reveal-up {
+  opacity: 0;
+  will-change: opacity, transform;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+
+.anim-section .reveal {
+  transform: translate3d(0, 34px, 0);
+}
+
+.anim-section .reveal.from-left {
+  transform: translate3d(calc(-120vw - 120px), 0, 0);
+}
+
+.anim-section .reveal.from-right {
+  transform: translate3d(calc(120vw + 120px), 0, 0);
+}
+
+.anim-section .reveal-up {
+  transform: translate3d(0, 64px, 0);
+}
+
+.anim-section.is-visible .reveal.from-left {
+  animation: reveal-left var(--reveal-duration-side) var(--reveal-ease) var(--reveal-delay, 0ms) both;
+}
+
+.anim-section.is-visible .reveal.from-right {
+  animation: reveal-right var(--reveal-duration-side) var(--reveal-ease) var(--reveal-delay, 0ms) both;
+}
+
+.anim-section.is-visible .reveal-up {
+  animation: reveal-up var(--reveal-duration-main) var(--reveal-ease) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes reveal-left {
+  0% {
+    transform: translate3d(calc(-120vw - 120px), 0, 0);
+    opacity: 0;
+  }
+  25% {
+    opacity: .25;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-right {
+  0% {
+    transform: translate3d(calc(120vw + 120px), 0, 0);
+    opacity: 0;
+  }
+  25% {
+    opacity: .25;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-up {
+  0% {
+    transform: translate3d(0, 64px, 0);
+    opacity: 0;
+  }
+  25% {
+    opacity: .2;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
 .mockup-grid {
   display: grid;
   gap: 1rem;
@@ -813,6 +898,31 @@ h1 {
   backdrop-filter: blur(10px);
 }
 
+.fact-card,
+.team-member,
+.industry-tile,
+.process-step,
+.mockup-card,
+.info-card,
+.faq-item,
+.home-cta-wrap,
+.desktop-video-wrap,
+.tiktok-wrap {
+  transition: transform .5s ease, box-shadow .5s ease, border-color .5s ease;
+}
+
+.fact-card:hover,
+.team-member:hover,
+.industry-tile:hover,
+.process-step:hover,
+.mockup-card:hover,
+.info-card:hover,
+.faq-item:hover,
+.home-cta-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(20, 38, 68, 0.11);
+}
+
 .faq-item h3 {
   margin: 0 0 .35rem;
 }
@@ -1026,6 +1136,36 @@ td {
 }
 
 @media (max-width: 760px) {
+  .anim-section {
+    overflow-x: hidden;
+  }
+
+  .anim-section .reveal.from-left,
+  .anim-section .reveal.from-right {
+    transform: translate3d(0, 62px, 0);
+  }
+
+  .industries-alt.anim-section .reveal.from-left {
+    transform: translate3d(calc(-105vw - 72px), 0, 0);
+  }
+
+  .industries-alt.anim-section .reveal.from-right {
+    transform: translate3d(calc(105vw + 72px), 0, 0);
+  }
+
+  .anim-section.is-visible .reveal.from-left,
+  .anim-section.is-visible .reveal.from-right {
+    animation: reveal-up var(--reveal-duration-main) var(--reveal-ease) var(--reveal-delay, 0ms) both;
+  }
+
+  .industries-alt.anim-section.is-visible .reveal.from-left {
+    animation: reveal-left var(--reveal-duration-side) var(--reveal-ease) var(--reveal-delay, 0ms) both;
+  }
+
+  .industries-alt.anim-section.is-visible .reveal.from-right {
+    animation: reveal-right var(--reveal-duration-side) var(--reveal-ease) var(--reveal-delay, 0ms) both;
+  }
+
   .nav-wrap {
     align-items: center;
     flex-wrap: wrap;
@@ -1108,5 +1248,25 @@ td {
   .scan-beam,
   .brand img {
     animation: none;
+  }
+
+  .anim-section .reveal,
+  .anim-section .reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fact-card,
+  .team-member,
+  .industry-tile,
+  .process-step,
+  .mockup-card,
+  .info-card,
+  .faq-item,
+  .home-cta-wrap,
+  .desktop-video-wrap,
+  .tiktok-wrap {
+    transition: none;
   }
 }
