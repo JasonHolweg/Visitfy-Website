@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-label="Mockup Mobile">
+  <defs><linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#d9e9fb"/><stop offset="1" stop-color="#c1d9f5"/></linearGradient></defs>
+  <rect width="1280" height="800" rx="36" fill="url(#bg2)"/>
+  <rect x="210" y="90" width="300" height="620" rx="46" fill="#0f243f"/>
+  <rect x="228" y="130" width="264" height="530" rx="30" fill="#f7fbff"/>
+  <rect x="260" y="170" width="200" height="150" rx="14" fill="#c6dcf5"/>
+  <rect x="260" y="338" width="200" height="26" rx="8" fill="#d6e6f8"/>
+  <rect x="260" y="382" width="160" height="26" rx="8" fill="#d6e6f8"/>
+  <rect x="260" y="426" width="180" height="40" rx="20" fill="#95c9ff"/>
+  <rect x="620" y="170" width="460" height="90" rx="16" fill="#f5f9ff" stroke="#a9c5e8"/>
+  <rect x="620" y="290" width="460" height="90" rx="16" fill="#f5f9ff" stroke="#a9c5e8"/>
+  <rect x="620" y="410" width="460" height="90" rx="16" fill="#f5f9ff" stroke="#a9c5e8"/>
+</svg>

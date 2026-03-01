@@ -15,7 +15,9 @@
     "cta_headline": "Bereit für deinen 360° Auftritt?",
     "cta_text": "Wir erstellen dir ein klares Angebot mit Zeitplan und transparenten Kosten.",
     "cta_button_text": "Jetzt Projekt starten",
-    "cta_button_link": "index.php?page=kontakt"
+    "cta_button_link": "index.php?page=kontakt",
+    "cta_person_image": "assets/images/team/kristian-cta-placeholder.svg",
+    "cta_person_name": "Kristian Meister"
   },
   "kpis": [
     {
@@ -55,6 +57,10 @@
     {
       "title": "Hotels",
       "description": "Bessere Buchungsentscheidungen dank realistischer Darstellung von Zimmern und Flächen."
+    },
+    {
+      "title": "Praxen",
+      "description": "Professioneller erster Eindruck durch transparente Einblicke in Räume und Ausstattung."
     }
   ],
   "process_steps": [
@@ -93,6 +99,86 @@
       "answer": "Ja, wir liefern eine einfache Einbindung für Website, Landingpages und Google-Profile."
     }
   ],
+  "tours": [
+    {
+      "title": "Rundgang 01",
+      "url": "https://my.matterport.com/show/?m=ZvsmkQVy6qB"
+    },
+    {
+      "title": "Rundgang 02",
+      "url": "https://my.matterport.com/show/?m=2s8oXwSFrPC"
+    },
+    {
+      "title": "Rundgang 03",
+      "url": "https://my.matterport.com/show/?m=1VKyHfuxX8J"
+    }
+  ],
+  "mockups": [
+    {
+      "title": "Website Integration",
+      "image": "assets/images/mockups/mockup-website.svg"
+    },
+    {
+      "title": "Mobile Ansicht",
+      "image": "assets/images/mockups/mockup-mobile.svg"
+    },
+    {
+      "title": "Social Teaser",
+      "image": "assets/images/mockups/mockup-social.svg"
+    }
+  ],
+  "team": [
+    {
+      "name": "Kristian Meister",
+      "role": "Geschäftsführer",
+      "image": "assets/images/team/kristian-meister-placeholder.svg",
+      "bio": "Leitet Visitfy mit Fokus auf Qualität, klare Kommunikation und messbare Ergebnisse.",
+      "quote": "Jeder Rundgang muss Vertrauen in Sekunden erzeugen."
+    },
+    {
+      "name": "Fabian Meister",
+      "role": "Marketing & Vertrieb",
+      "image": "assets/images/team/fabian-meister-placeholder.svg",
+      "bio": "Verbindet Zielgruppenverständnis mit vertriebsstarken Botschaften und sauberem Lead-Funnel.",
+      "quote": "Sichtbarkeit ist gut, qualifizierte Anfragen sind besser."
+    },
+    {
+      "name": "Jason Holweg",
+      "role": "Entwicklung",
+      "image": "assets/images/team/jason-holweg-placeholder.svg",
+      "bio": "Ich bin nicht nur Entwickler, sondern auch Inhaber von Flora Kaffee & Eisbar, einem Eiscafe. So kenne ich die Bedürfnisse der Gastronomie aus erster Hand und verbinde sie mit technischem Know-how im Digitalen.",
+      "quote": "Technik muss im Alltag von Betrieben direkt Mehrwert liefern."
+    }
+  ],
+  "socials": {
+    "instagram": "https://www.instagram.com/visitfy.de/",
+    "facebook": "https://www.facebook.com/people/Visitfy/61567271012669/",
+    "tiktok": "https://www.tiktok.com/@visitfy/video/7542233980289142038",
+    "tiktok_embed": "https://www.tiktok.com/embed/v2/7542233980289142038",
+    "desktop_video": "assets/videos/erklaerung.mp4"
+  },
+  "theme": {
+    "default_mode": "light",
+    "hero_animation": "particles",
+    "light": {
+      "bg": "#eef1f5",
+      "bg_alt": "#e5ebf3",
+      "text": "#111826",
+      "muted": "#5f6b7f",
+      "primary": "#95c9ff",
+      "primary_dark": "#62abf7",
+      "primary_ink": "#0d2742"
+    },
+    "dark": {
+      "bg": "#0f1622",
+      "bg_alt": "#182233",
+      "text": "#e9f1ff",
+      "muted": "#9aadc8",
+      "primary": "#8abfff",
+      "primary_dark": "#5fa7f8",
+      "primary_ink": "#081a30"
+    }
+  },
   "seo": {
     "defaults": {
       "title": "Visitfy | 360° Rundgänge mit Ergebnisfokus",
@@ -160,6 +246,6 @@
     "postal_code": "10115",
     "city": "Berlin",
     "country": "DE",
-    "logo": "/assets/img/logo.png"
+    "logo": "/assets/images/visitfy-logo.svg"
   }
 }

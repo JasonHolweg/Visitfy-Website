@@ -33,6 +33,42 @@ $openGraph = [
 $twitterCard = $seoData['twitter_card'];
 $jsonLd = $seoData['json_ld'];
 
+$themeDefaults = [
+    'default_mode' => 'light',
+    'light' => [
+        'bg' => '#eef1f5',
+        'bg_alt' => '#e5ebf3',
+        'text' => '#111826',
+        'muted' => '#5f6b7f',
+        'primary' => '#95c9ff',
+        'primary_dark' => '#62abf7',
+        'primary_ink' => '#0d2742',
+    ],
+    'dark' => [
+        'bg' => '#0f1622',
+        'bg_alt' => '#182233',
+        'text' => '#e9f1ff',
+        'muted' => '#9aadc8',
+        'primary' => '#8abfff',
+        'primary_dark' => '#5fa7f8',
+        'primary_ink' => '#081a30',
+    ],
+];
+
+$themeContent = $content['theme'] ?? [];
+$themeLight = array_merge($themeDefaults['light'], is_array($themeContent['light'] ?? null) ? $themeContent['light'] : []);
+$themeDark = array_merge($themeDefaults['dark'], is_array($themeContent['dark'] ?? null) ? $themeContent['dark'] : []);
+$defaultThemeMode = (string) ($themeContent['default_mode'] ?? $themeDefaults['default_mode']);
+if (!in_array($defaultThemeMode, ['light', 'dark', 'auto'], true)) {
+    $defaultThemeMode = 'light';
+}
+$heroAnimation = (string) ($themeContent['hero_animation'] ?? 'particles');
+if (!in_array($heroAnimation, ['particles', 'scan'], true)) {
+    $heroAnimation = 'particles';
+}
+$initialTheme = $defaultThemeMode === 'dark' ? 'dark' : 'light';
+$metaThemeColor = $initialTheme === 'dark' ? $themeDark['bg'] : $themeLight['primary'];
+
 $assetVersion = [
     'css' => (string) (@filemtime(__DIR__ . '/assets/css/style.css') ?: '1'),
     'js' => (string) (@filemtime(__DIR__ . '/assets/js/main.js') ?: '1'),

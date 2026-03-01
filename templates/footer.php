@@ -9,6 +9,7 @@ declare(strict_types=1);
         <nav>
             <a href="index.php?page=impressum">Impressum</a>
             <a href="index.php?page=datenschutz">Datenschutz</a>
+            <a class="admin-footer-link" href="admin/login.php">Admin</a>
         </nav>
     </div>
 </footer>
