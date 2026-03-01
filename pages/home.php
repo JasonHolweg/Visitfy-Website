@@ -8,6 +8,7 @@ $industries = $content['industries'] ?? [
     ['title' => 'Immobilien', 'description' => 'Virtuelle Besichtigungen für schnellere Entscheidungen.'],
     ['title' => 'Gastronomie', 'description' => 'Mehr Vertrauen durch realistische Einblicke vor dem Besuch.'],
     ['title' => 'Hotels', 'description' => 'Höhere Buchungsqualität durch transparente Raumdarstellung.'],
+    ['title' => 'Praxen', 'description' => 'Professionelle Darstellung von Räumen, Technik und Ambiente.'],
 ];
 $processSteps = $content['process_steps'] ?? [
     ['title' => 'Briefing & Termin', 'description' => 'Wir definieren Ziele, Umfang und Zeitplan.'],
@@ -35,10 +36,18 @@ $primaryCtaText = $home['primary_cta_text'] ?? 'Jetzt Beratung anfragen';
 $primaryCtaLink = $home['primary_cta_link'] ?? 'index.php?page=kontakt';
 $secondaryCtaText = $home['secondary_cta_text'] ?? 'Unsere Fakten';
 $secondaryCtaLink = $home['secondary_cta_link'] ?? '#facts';
+
+$industryTiles = array_values(array_slice($industries, 0, 4));
+
+$logoFiles = glob(__DIR__ . '/../assets/images/logos/*.{svg,png,jpg,jpeg,webp}', GLOB_BRACE) ?: [];
+$logoUrls = [];
+foreach ($logoFiles as $file) {
+    $logoUrls[] = 'assets/images/logos/' . basename($file);
+}
 ?>
 <section class="hero">
     <div class="hero-bg" aria-hidden="true">
-        <div id="hero-particles" class="hero-particles"></div>
+        <div class="particle-layer" data-particles="30"></div>
     </div>
     <div class="container hero-shell">
         <div class="hero-glass">
@@ -51,6 +60,18 @@ $secondaryCtaLink = $home['secondary_cta_link'] ?? '#facts';
             </div>
         </div>
     </div>
+
+    <?php if ($logoUrls !== []): ?>
+        <div class="logo-marquee" aria-label="Kundenlogos">
+            <div class="logo-track">
+                <?php foreach (array_merge($logoUrls, $logoUrls) as $logoUrl): ?>
+                    <div class="logo-item">
+                        <img src="<?= htmlspecialchars($logoUrl) ?>" alt="Kundenlogo" loading="lazy">
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
 </section>
 
 <section id="facts" class="facts">
@@ -95,13 +116,15 @@ $secondaryCtaLink = $home['secondary_cta_link'] ?? '#facts';
 </section>
 <?php endif; ?>
 
-<?php if ($industries !== []): ?>
-<section class="industries">
+<section class="industries-alt">
+    <div class="section-bg" aria-hidden="true">
+        <div class="particle-layer" data-particles="24"></div>
+    </div>
     <div class="container">
         <h2><?= htmlspecialchars($home['industries_headline'] ?? 'Branchen, die wir unterstützen') ?></h2>
-        <div class="card-grid">
-            <?php foreach ($industries as $industry): ?>
-                <article class="info-card">
+        <div class="industry-mosaic">
+            <?php foreach ($industryTiles as $index => $industry): ?>
+                <article class="industry-tile <?= in_array($index, [0, 3], true) ? 'square' : 'wide' ?>">
                     <h3><?= htmlspecialchars((string) ($industry['title'] ?? '')) ?></h3>
                     <p><?= htmlspecialchars((string) ($industry['description'] ?? '')) ?></p>
                 </article>
@@ -109,19 +132,16 @@ $secondaryCtaLink = $home['secondary_cta_link'] ?? '#facts';
         </div>
     </div>
 </section>
-<?php endif; ?>
 
-<section class="process">
+<section class="process-modern">
     <div class="container">
         <h2><?= htmlspecialchars($home['process_headline'] ?? 'So läuft es ab') ?></h2>
-        <div class="process-grid">
+        <div class="process-track">
             <?php foreach ($processSteps as $index => $step): ?>
-                <article>
-                    <strong><?= $index + 1 ?>.</strong>
-                    <?= htmlspecialchars((string) ($step['title'] ?? '')) ?>
-                    <?php if (($step['description'] ?? '') !== ''): ?>
-                        <p><?= htmlspecialchars((string) $step['description']) ?></p>
-                    <?php endif; ?>
+                <article class="process-step">
+                    <span class="process-number"><?= $index + 1 ?></span>
+                    <h3><?= htmlspecialchars((string) ($step['title'] ?? '')) ?></h3>
+                    <p><?= htmlspecialchars((string) ($step['description'] ?? '')) ?></p>
                 </article>
             <?php endforeach; ?>
         </div>

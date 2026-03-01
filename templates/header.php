@@ -37,13 +37,13 @@ declare(strict_types=1);
 <header class="site-header">
     <div class="container nav-wrap">
         <a class="brand" href="index.php">Visitfy</a>
-        <nav class="main-nav">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menü</button>
+        <nav id="main-nav" class="main-nav">
             <a href="index.php">Home</a>
             <a href="index.php?page=about">Über uns</a>
             <a href="index.php?page=faq">FAQ</a>
             <a href="index.php?page=kontakt">Kontakt</a>
         </nav>
-        <a class="btn" href="admin/login.php">Admin</a>
     </div>
 </header>
 <main>

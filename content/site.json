@@ -55,6 +55,10 @@
     {
       "title": "Hotels",
       "description": "Bessere Buchungsentscheidungen dank realistischer Darstellung von Zimmern und Flächen."
+    },
+    {
+      "title": "Praxen",
+      "description": "Professioneller erster Eindruck durch transparente Einblicke in Räume und Ausstattung."
     }
   ],
   "process_steps": [
