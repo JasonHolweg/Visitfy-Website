@@ -35,4 +35,31 @@ final class Validation
 
         return max($min, min($max, $int));
     }
+
+    public static function cleanUrl(string $value, int $maxLength = 200): string
+    {
+        $value = trim($value);
+        if ($value === '') {
+            return '';
+        }
+
+        if (mb_strlen($value) > $maxLength) {
+            $value = mb_substr($value, 0, $maxLength);
+        }
+
+        // Allow relative links and safe schemes.
+        if (str_starts_with($value, '/')) {
+            return $value;
+        }
+
+        if (str_starts_with($value, 'index.php')) {
+            return $value;
+        }
+
+        if (preg_match('/^(https?:\/\/|mailto:|tel:)/i', $value) === 1) {
+            return $value;
+        }
+
+        return '';
+    }
 }

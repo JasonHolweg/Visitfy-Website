@@ -2,7 +2,20 @@
   "home": {
     "eyebrow": "360° Rundgänge für moderne Unternehmen",
     "headline": "Mehr Sichtbarkeit. Mehr Vertrauen. Mehr Anfragen.",
-    "subline": "Visitfy erstellt hochwertige 360°-Erlebnisse für Immobilien, Gastronomie, Hotels und Praxen."
+    "subline": "Visitfy erstellt hochwertige 360°-Erlebnisse für Immobilien, Gastronomie, Hotels und Praxen.",
+    "primary_cta_text": "Jetzt Beratung anfragen",
+    "primary_cta_link": "index.php?page=kontakt",
+    "secondary_cta_text": "Unsere Fakten",
+    "secondary_cta_link": "#facts",
+    "facts_headline": "Zahlen, die überzeugen",
+    "industries_headline": "Branchen, die wir unterstützen",
+    "process_headline": "So läuft es ab",
+    "references_headline": "Referenzen mit Ergebnis",
+    "faq_headline": "Häufige Fragen",
+    "cta_headline": "Bereit für deinen 360° Auftritt?",
+    "cta_text": "Wir erstellen dir ein klares Angebot mit Zeitplan und transparenten Kosten.",
+    "cta_button_text": "Jetzt Projekt starten",
+    "cta_button_link": "index.php?page=kontakt"
   },
   "kpis": [
     {
@@ -26,8 +39,58 @@
     {
       "label": "Ø Lieferzeit",
       "value": 5,
-      "suffix": "T",
+      "suffix": "Tage",
       "duration": 1200
+    }
+  ],
+  "industries": [
+    {
+      "title": "Immobilien",
+      "description": "Virtuelle Besichtigungen für schnellere Entscheidungen und höhere Anfragequalität."
+    },
+    {
+      "title": "Gastronomie",
+      "description": "Mehr Vertrauen durch transparente Einblicke in Atmosphäre und Raumgefühl."
+    },
+    {
+      "title": "Hotels",
+      "description": "Bessere Buchungsentscheidungen dank realistischer Darstellung von Zimmern und Flächen."
+    }
+  ],
+  "process_steps": [
+    {
+      "title": "Briefing & Termin",
+      "description": "Wir definieren Ziele, Umfang, Stil und den optimalen Aufnahmetag."
+    },
+    {
+      "title": "Aufnahme vor Ort",
+      "description": "Professioneller Scan mit sauberer Nachbearbeitung für ein hochwertiges Ergebnis."
+    },
+    {
+      "title": "Live-Schaltung",
+      "description": "Einbindung auf Website, Google und Social Media inklusive Support."
+    }
+  ],
+  "references": [
+    {
+      "name": "Boutique Hotel Beispiel",
+      "result": "+34% qualifizierte Anfragen",
+      "description": "Der Rundgang wurde auf Landingpage und Maps integriert und erhöhte die Abschlussrate."
+    },
+    {
+      "name": "Restaurant Beispiel",
+      "result": "+27% Reservierungsanfragen",
+      "description": "Mehr Vertrauen vor dem Besuch durch sichtbare Raumwirkung und Atmosphäre."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Wie lange dauert ein Projekt?",
+      "answer": "Typisch 3 bis 7 Werktage je nach Objektgröße und gewünschtem Umfang."
+    },
+    {
+      "question": "Können Rundgänge auf der Website eingebunden werden?",
+      "answer": "Ja, wir liefern eine einfache Einbindung für Website, Landingpages und Google-Profile."
     }
   ]
 }

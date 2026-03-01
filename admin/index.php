@@ -19,7 +19,7 @@ requireAdminAuth();
         <h1>Admin Dashboard</h1>
         <div class="admin-links">
             <a class="btn btn-primary" href="kpis.php">KPI Zahlen verwalten</a>
-            <a class="btn btn-outline" href="pages.php">Homepage-Text verwalten</a>
+            <a class="btn btn-outline" href="pages.php">Homepage komplett verwalten</a>
             <a class="btn" href="logout.php">Logout</a>
         </div>
     </div>

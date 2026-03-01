@@ -3,7 +3,7 @@
 Neues PHP-CMS-Grundgerüst für Visitfy mit:
 - Klare Seitenstruktur (`index.php`, `pages/`, `logic/`, `admin/`)
 - CMS-Content in `content/site.json`
-- Admin-Bereich für KPI-Zahlen und Homepage-Texte
+- Admin-Bereich für KPI-Zahlen und komplette Homepage-Inhalte
 - Animierte KPI-Counter auf der Startseite
 - Kontakt-Backend mit Mailversand, CSRF, Honeypot, Rate-Limit und DSGVO-Checkbox
 

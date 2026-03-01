@@ -159,6 +159,13 @@ h1 {
   padding: 2rem 0 3rem;
 }
 
+.industries,
+.references,
+.home-faq,
+.home-cta {
+  padding: 1.5rem 0 2.5rem;
+}
+
 .process-grid {
   display: grid;
   gap: .8rem;
@@ -169,6 +176,67 @@ h1 {
   background: var(--bg-alt);
   border-radius: 10px;
   padding: 1rem;
+}
+
+.process-grid article p {
+  margin: .55rem 0 0;
+  color: var(--muted);
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.info-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+.info-card h3 {
+  margin: 0 0 .6rem;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.reference-result {
+  color: var(--primary-dark) !important;
+  font-weight: 700;
+  margin-bottom: .45rem !important;
+}
+
+.faq-list {
+  display: grid;
+  gap: .8rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 1rem;
+}
+
+.faq-item h3 {
+  margin: 0 0 .35rem;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.home-cta .narrow {
+  background: linear-gradient(125deg, #e6efdd, #f6f8f1);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem;
 }
 
 .site-footer {
@@ -224,6 +292,12 @@ table input {
   display: flex;
   gap: .7rem;
   flex-wrap: wrap;
+}
+
+.admin-grid-2 {
+  display: grid;
+  gap: .8rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .table-wrap {
