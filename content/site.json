@@ -15,7 +15,9 @@
     "cta_headline": "Bereit für deinen 360° Auftritt?",
     "cta_text": "Wir erstellen dir ein klares Angebot mit Zeitplan und transparenten Kosten.",
     "cta_button_text": "Jetzt Projekt starten",
-    "cta_button_link": "index.php?page=kontakt"
+    "cta_button_link": "index.php?page=kontakt",
+    "cta_person_image": "assets/images/team/kristian-cta-placeholder.svg",
+    "cta_person_name": "Kristian Meister"
   },
   "kpis": [
     {
@@ -104,11 +106,25 @@
     },
     {
       "title": "Rundgang 02",
-      "url": "https://my.matterport.com/show?play=1&lang=en-US&m=2s8oXwSFrPC"
+      "url": "https://my.matterport.com/show/?m=2s8oXwSFrPC"
     },
     {
       "title": "Rundgang 03",
-      "url": "https://my.matterport.com/show?play=1&lang=en-US&m=1VKyHfuxX8J"
+      "url": "https://my.matterport.com/show/?m=1VKyHfuxX8J"
+    }
+  ],
+  "mockups": [
+    {
+      "title": "Website Integration",
+      "image": "assets/images/mockups/mockup-website.svg"
+    },
+    {
+      "title": "Mobile Ansicht",
+      "image": "assets/images/mockups/mockup-mobile.svg"
+    },
+    {
+      "title": "Social Teaser",
+      "image": "assets/images/mockups/mockup-social.svg"
     }
   ],
   "team": [
@@ -134,6 +150,13 @@
       "quote": "Technik muss im Alltag von Betrieben direkt Mehrwert liefern."
     }
   ],
+  "socials": {
+    "instagram": "https://www.instagram.com/visitfy.de/",
+    "facebook": "https://www.facebook.com/people/Visitfy/61567271012669/",
+    "tiktok": "https://www.tiktok.com/@visitfy/video/7542233980289142038",
+    "tiktok_embed": "https://www.tiktok.com/embed/v2/7542233980289142038",
+    "desktop_video": "assets/videos/erklaerung.mp4"
+  },
   "seo": {
     "defaults": {
       "title": "Visitfy | 360° Rundgänge mit Ergebnisfokus",

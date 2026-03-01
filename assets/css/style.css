@@ -27,6 +27,7 @@ body {
     linear-gradient(165deg, #f6f8fb, var(--bg) 46%, #e7edf4);
   color: var(--text);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 .container {
@@ -67,14 +68,8 @@ body {
 
 .brand img {
   display: block;
-  height: 32px;
+  height: 38px;
   width: auto;
-}
-
-.brand span {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: .01em;
 }
 
 .nav-toggle {
@@ -206,11 +201,10 @@ footer a {
   left: 0;
   right: 0;
   bottom: max(0px, env(safe-area-inset-bottom));
-  min-height: 96px;
+  min-height: 82px;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: hidden;
   border-top: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.36);
   backdrop-filter: blur(8px);
@@ -221,15 +215,15 @@ footer a {
 .logo-track {
   display: flex;
   align-items: center;
-  gap: 2.2rem;
+  gap: 1.7rem;
   width: max-content;
-  padding: .35rem 0;
+  padding: .28rem 0;
   animation: logo-scroll 40s linear infinite;
 }
 
 .logo-item {
-  width: 140px;
-  height: 68px;
+  width: 118px;
+  height: 42px;
   display: grid;
   place-items: center;
   filter: grayscale(100%);
@@ -241,7 +235,8 @@ footer a {
   display: block;
   width: auto;
   max-width: 100%;
-  height: 100%;
+  height: 32px;
+  max-height: 32px;
   object-fit: contain;
   object-position: center;
 }
@@ -357,6 +352,39 @@ h1 {
   padding: 2.1rem 0 2.8rem;
 }
 
+.mockup-section {
+  padding: 1.2rem 0 2.6rem;
+}
+
+.mockup-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.mockup-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(10px);
+  padding: .75rem;
+  box-shadow: 0 14px 30px rgba(20, 38, 68, 0.07);
+}
+
+.mockup-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.mockup-card p {
+  margin: .6rem .1rem .2rem;
+  color: var(--muted);
+}
+
 .section-intro {
   color: var(--muted);
   max-width: 65ch;
@@ -365,12 +393,17 @@ h1 {
 .tour-stack {
   width: min(1100px, calc(100% - 2rem));
   margin: 1rem auto 0;
+  padding-bottom: 14vh;
 }
 
 .tour-stage {
   position: sticky;
   top: 92px;
   margin-bottom: 16vh;
+}
+
+.tour-stage:last-child {
+  margin-bottom: 0;
 }
 
 .tour-card {
@@ -611,6 +644,92 @@ h1 {
   box-shadow: 0 16px 34px rgba(20, 38, 68, 0.09);
 }
 
+.home-cta-wrap {
+  background: linear-gradient(125deg, rgba(225, 239, 255, 0.72), rgba(246, 250, 255, 0.78));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 34px rgba(20, 38, 68, 0.09);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr minmax(180px, 260px);
+  align-items: center;
+}
+
+.home-cta-copy p {
+  margin-top: .3rem;
+}
+
+.home-cta-person {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.home-cta-person img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.home-cta-person figcaption {
+  padding: .5rem .65rem;
+  font-size: .9rem;
+  color: #2f6fb1;
+  font-weight: 600;
+}
+
+.social-section {
+  padding: .8rem 0 2.8rem;
+}
+
+.social-links {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+.desktop-video-wrap {
+  margin-top: .9rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 14px 30px rgba(20, 38, 68, 0.08);
+}
+
+.desktop-video-wrap video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #0e1726;
+}
+
+.tiktok-wrap {
+  margin-top: .9rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 14px 30px rgba(20, 38, 68, 0.08);
+}
+
+.tiktok-wrap iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 740px;
+  border: 0;
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.2rem 0;
@@ -726,7 +845,7 @@ td {
   }
 
   .brand img {
-    height: 28px;
+    height: 34px;
   }
 
   .nav-toggle {
@@ -756,8 +875,13 @@ td {
   }
 
   .logo-item {
-    width: 105px;
-    height: 56px;
+    width: 88px;
+    height: 36px;
+  }
+
+  .logo-item img {
+    height: 26px;
+    max-height: 26px;
   }
 
   .tour-stage {
@@ -772,6 +896,22 @@ td {
   .team-member:nth-child(2) .team-image,
   .team-member:nth-child(2) .team-content {
     order: initial;
+  }
+
+  .home-cta-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-video-wrap {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .tiktok-wrap iframe {
+    height: 620px;
   }
 }
 

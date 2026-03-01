@@ -38,7 +38,6 @@ declare(strict_types=1);
     <div class="container nav-wrap">
         <a class="brand" href="index.php" aria-label="Visitfy Startseite">
             <img src="assets/images/visitfy-logo.svg" alt="Visitfy Logo" loading="eager" fetchpriority="high">
-            <span>Visitfy</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menü</button>
         <nav id="main-nav" class="main-nav">

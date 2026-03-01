@@ -47,18 +47,32 @@ $tours = $content['tours'] ?? [
     ],
     [
         'title' => 'Rundgang 02',
-        'url' => 'https://my.matterport.com/show?play=1&lang=en-US&m=2s8oXwSFrPC',
+        'url' => 'https://my.matterport.com/show/?m=2s8oXwSFrPC',
     ],
     [
         'title' => 'Rundgang 03',
-        'url' => 'https://my.matterport.com/show?play=1&lang=en-US&m=1VKyHfuxX8J',
+        'url' => 'https://my.matterport.com/show/?m=1VKyHfuxX8J',
     ],
+];
+$mockups = $content['mockups'] ?? [
+    ['title' => 'Website Integration', 'image' => 'assets/images/mockups/mockup-website.svg'],
+    ['title' => 'Mobile Ansicht', 'image' => 'assets/images/mockups/mockup-mobile.svg'],
+    ['title' => 'Social Teaser', 'image' => 'assets/images/mockups/mockup-social.svg'],
 ];
 
 $primaryCtaText = $home['primary_cta_text'] ?? 'Jetzt Beratung anfragen';
 $primaryCtaLink = $home['primary_cta_link'] ?? 'index.php?page=kontakt';
 $secondaryCtaText = $home['secondary_cta_text'] ?? 'Unsere Fakten';
 $secondaryCtaLink = $home['secondary_cta_link'] ?? '#facts';
+$ctaPersonImage = $home['cta_person_image'] ?? 'assets/images/team/kristian-cta-placeholder.svg';
+$ctaPersonName = $home['cta_person_name'] ?? 'Kristian Meister';
+$socials = $content['socials'] ?? [
+    'instagram' => 'https://www.instagram.com/visitfy.de/',
+    'facebook' => 'https://www.facebook.com/people/Visitfy/61567271012669/',
+    'tiktok' => 'https://www.tiktok.com/@visitfy/video/7542233980289142038',
+    'tiktok_embed' => 'https://www.tiktok.com/embed/v2/7542233980289142038',
+    'desktop_video' => 'assets/videos/erklaerung.mp4',
+];
 
 $industryTiles = array_values(array_slice($industries, 0, 4));
 
@@ -194,6 +208,22 @@ foreach ($logoFiles as $file) {
     </div>
 </section>
 
+<?php if ($mockups !== []): ?>
+<section class="mockup-section">
+    <div class="container">
+        <h2>Mockup Vorschau</h2>
+        <div class="mockup-grid">
+            <?php foreach ($mockups as $mockup): ?>
+                <article class="mockup-card">
+                    <img src="<?= htmlspecialchars((string) ($mockup['image'] ?? '')) ?>" alt="<?= htmlspecialchars((string) ($mockup['title'] ?? 'Mockup')) ?>" loading="lazy">
+                    <p><?= htmlspecialchars((string) ($mockup['title'] ?? 'Mockup')) ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <?php if ($references !== []): ?>
 <section class="references">
     <div class="container">
@@ -228,11 +258,44 @@ foreach ($logoFiles as $file) {
 <?php endif; ?>
 
 <section class="home-cta">
-    <div class="container narrow">
-        <h2><?= htmlspecialchars($home['cta_headline'] ?? 'Bereit für deinen 360° Auftritt?') ?></h2>
-        <p><?= htmlspecialchars($home['cta_text'] ?? 'Wir erstellen dir ein klares Angebot mit Zeitplan und transparenten Kosten.') ?></p>
-        <a class="btn btn-primary" href="<?= htmlspecialchars((string) ($home['cta_button_link'] ?? 'index.php?page=kontakt')) ?>">
-            <?= htmlspecialchars($home['cta_button_text'] ?? 'Jetzt Projekt starten') ?>
-        </a>
+    <div class="container home-cta-wrap">
+        <div class="home-cta-copy">
+            <h2><?= htmlspecialchars($home['cta_headline'] ?? 'Bereit für deinen 360° Auftritt?') ?></h2>
+            <p><?= htmlspecialchars($home['cta_text'] ?? 'Wir erstellen dir ein klares Angebot mit Zeitplan und transparenten Kosten.') ?></p>
+            <a class="btn btn-primary" href="<?= htmlspecialchars((string) ($home['cta_button_link'] ?? 'index.php?page=kontakt')) ?>">
+                <?= htmlspecialchars($home['cta_button_text'] ?? 'Jetzt Projekt starten') ?>
+            </a>
+        </div>
+        <figure class="home-cta-person">
+            <img src="<?= htmlspecialchars((string) $ctaPersonImage) ?>" alt="<?= htmlspecialchars((string) $ctaPersonName) ?>" loading="lazy">
+            <figcaption><?= htmlspecialchars((string) $ctaPersonName) ?></figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="social-section">
+    <div class="container">
+        <h2>Folge Visitfy</h2>
+        <div class="social-links">
+            <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['instagram'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['facebook'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['tiktok'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
+        <div class="desktop-video-wrap">
+            <video controls preload="metadata" playsinline>
+                <source src="<?= htmlspecialchars((string) ($socials['desktop_video'] ?? 'assets/videos/erklaerung.mp4')) ?>" type="video/mp4">
+                Dein Browser unterstützt kein HTML5-Video.
+            </video>
+        </div>
+        <div class="tiktok-wrap mobile-only">
+            <iframe
+                src="<?= htmlspecialchars((string) ($socials['tiktok_embed'] ?? '')) ?>"
+                title="Visitfy TikTok Video"
+                loading="lazy"
+                allow="autoplay; encrypted-media; picture-in-picture;"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+            ></iframe>
+        </div>
     </div>
 </section>
