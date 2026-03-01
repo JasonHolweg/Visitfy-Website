@@ -144,7 +144,9 @@ foreach ($logoFiles as $file) {
                 <div class="tour-card">
                     <p class="tour-kicker"><?= htmlspecialchars((string) ($tour['title'] ?? 'Rundgang')) ?></p>
                     <iframe
-                        src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
+                        src="about:blank"
+                        data-src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
+                        class="lazy-iframe"
                         title="<?= htmlspecialchars((string) ($tour['title'] ?? 'Matterport Rundgang')) ?>"
                         loading="lazy"
                         allow="fullscreen; xr-spatial-tracking;"
@@ -287,14 +289,16 @@ foreach ($logoFiles as $file) {
             <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['tiktok'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">TikTok</a>
         </div>
         <div class="desktop-video-wrap reveal-up" style="--reveal-delay: 220ms;">
-            <video controls preload="metadata" playsinline>
-                <source src="<?= htmlspecialchars((string) ($socials['desktop_video'] ?? 'assets/videos/erklaerung.mp4')) ?>" type="video/mp4">
+            <video controls preload="none" playsinline class="lazy-video">
+                <source data-src="<?= htmlspecialchars((string) ($socials['desktop_video'] ?? 'assets/videos/erklaerung.mp4')) ?>" type="video/mp4">
                 Dein Browser unterstützt kein HTML5-Video.
             </video>
         </div>
         <div class="tiktok-wrap mobile-only reveal-up" style="--reveal-delay: 220ms;">
             <iframe
-                src="<?= htmlspecialchars((string) ($socials['tiktok_embed'] ?? '')) ?>"
+                src="about:blank"
+                data-src="<?= htmlspecialchars((string) ($socials['tiktok_embed'] ?? '')) ?>"
+                class="lazy-iframe"
                 title="Visitfy TikTok Video"
                 loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture;"
