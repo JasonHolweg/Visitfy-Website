@@ -12,6 +12,6 @@ declare(strict_types=1);
         </nav>
     </div>
 </footer>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=<?= urlencode((string) ($assetVersion['js'] ?? '1')) ?>" defer></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 return [
     'site_name' => 'Visitfy',
+    'site_url' => 'https://visitfy.de',
     'base_url' => '/',
     'content_file' => __DIR__ . '/../content/site.json',
     'contact' => [

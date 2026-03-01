@@ -92,5 +92,74 @@
       "question": "Können Rundgänge auf der Website eingebunden werden?",
       "answer": "Ja, wir liefern eine einfache Einbindung für Website, Landingpages und Google-Profile."
     }
-  ]
+  ],
+  "seo": {
+    "defaults": {
+      "title": "Visitfy | 360° Rundgänge mit Ergebnisfokus",
+      "description": "Visitfy entwickelt hochwertige 360° Rundgänge für Unternehmen mit Fokus auf Sichtbarkeit, Vertrauen und qualifizierte Anfragen.",
+      "robots": "index,follow",
+      "twitter_card": "summary_large_image",
+      "og_image": "/assets/img/og-visitfy.jpg"
+    },
+    "pages": {
+      "home": {
+        "title": "Visitfy | 360° Rundgänge für mehr Anfragen",
+        "description": "Weniger Buzzwords, mehr Ergebnisse: Visitfy produziert 360° Rundgänge für Immobilien, Gastronomie, Hotels und Praxen.",
+        "robots": "index,follow",
+        "og_title": "Visitfy 360° Rundgänge",
+        "og_description": "Mehr Sichtbarkeit. Mehr Vertrauen. Mehr Anfragen.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      },
+      "about": {
+        "title": "Über Visitfy | Team & Qualität",
+        "description": "Lerne Visitfy kennen: Fokus auf hochwertige virtuelle Rundgänge und klare Projektprozesse.",
+        "robots": "index,follow",
+        "og_title": "Über Visitfy",
+        "og_description": "Wer wir sind und wie wir arbeiten.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      },
+      "faq": {
+        "title": "FAQ | Visitfy",
+        "description": "Antworten auf die wichtigsten Fragen zu Aufwand, Dauer und Einsatzmöglichkeiten von 360° Rundgängen.",
+        "robots": "index,follow",
+        "og_title": "Visitfy FAQ",
+        "og_description": "Die wichtigsten Antworten auf einen Blick.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      },
+      "kontakt": {
+        "title": "Kontakt | Visitfy",
+        "description": "Sende uns dein Projektziel. Wir melden uns mit einer konkreten Empfehlung und klarem Fahrplan.",
+        "robots": "index,follow",
+        "og_title": "Kontakt zu Visitfy",
+        "og_description": "Jetzt Projekt anfragen.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      },
+      "impressum": {
+        "title": "Impressum | Visitfy",
+        "description": "Rechtliche Angaben von Visitfy.",
+        "robots": "index,follow",
+        "og_title": "Impressum Visitfy",
+        "og_description": "Rechtliche Informationen.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      },
+      "datenschutz": {
+        "title": "Datenschutz | Visitfy",
+        "description": "Informationen zur Verarbeitung personenbezogener Daten bei Visitfy.",
+        "robots": "index,follow",
+        "og_title": "Datenschutz Visitfy",
+        "og_description": "Datenschutzinformationen.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      }
+    }
+  },
+  "company": {
+    "name": "Visitfy",
+    "phone": "+49 000 000000",
+    "email": "hello@visitfy.de",
+    "street": "Musterstraße 1",
+    "postal_code": "10115",
+    "city": "Berlin",
+    "country": "DE",
+    "logo": "/assets/img/logo.png"
+  }
 }
