@@ -62,4 +62,14 @@ final class Validation
 
         return '';
     }
+
+    public static function cleanColorHex(string $value, string $fallback = '#000000'): string
+    {
+        $value = strtolower(trim($value));
+        if (preg_match('/^#[0-9a-f]{6}$/', $value) === 1) {
+            return $value;
+        }
+
+        return strtolower($fallback);
+    }
 }

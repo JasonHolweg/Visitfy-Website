@@ -3,14 +3,14 @@
 declare(strict_types=1);
 ?>
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme="<?= htmlspecialchars((string) ($initialTheme ?? 'light')) ?>" data-default-theme="<?= htmlspecialchars((string) ($defaultThemeMode ?? 'light')) ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($pageTitle ?? 'Visitfy') ?></title>
     <meta name="description" content="<?= htmlspecialchars($metaDescription ?? '360° Rundgänge von Visitfy') ?>">
     <meta name="robots" content="<?= htmlspecialchars($metaRobots ?? 'index,follow') ?>">
-    <meta name="theme-color" content="#95c9ff">
+    <meta name="theme-color" content="<?= htmlspecialchars((string) ($metaThemeColor ?? '#95c9ff')) ?>">
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl ?? '') ?>">
 
     <meta property="og:type" content="website">
@@ -31,6 +31,27 @@ declare(strict_types=1);
 
     <link rel="preload" href="assets/css/style.css?v=<?= urlencode((string) ($assetVersion['css'] ?? '1')) ?>" as="style">
     <link rel="stylesheet" href="assets/css/style.css?v=<?= urlencode((string) ($assetVersion['css'] ?? '1')) ?>">
+    <style>
+        :root {
+            --bg: <?= htmlspecialchars((string) ($themeLight['bg'] ?? '#eef1f5')) ?>;
+            --bg-alt: <?= htmlspecialchars((string) ($themeLight['bg_alt'] ?? '#e5ebf3')) ?>;
+            --text: <?= htmlspecialchars((string) ($themeLight['text'] ?? '#111826')) ?>;
+            --muted: <?= htmlspecialchars((string) ($themeLight['muted'] ?? '#5f6b7f')) ?>;
+            --primary: <?= htmlspecialchars((string) ($themeLight['primary'] ?? '#95c9ff')) ?>;
+            --primary-dark: <?= htmlspecialchars((string) ($themeLight['primary_dark'] ?? '#62abf7')) ?>;
+            --primary-ink: <?= htmlspecialchars((string) ($themeLight['primary_ink'] ?? '#0d2742')) ?>;
+        }
+
+        html[data-theme="dark"] {
+            --bg: <?= htmlspecialchars((string) ($themeDark['bg'] ?? '#0f1622')) ?>;
+            --bg-alt: <?= htmlspecialchars((string) ($themeDark['bg_alt'] ?? '#182233')) ?>;
+            --text: <?= htmlspecialchars((string) ($themeDark['text'] ?? '#e9f1ff')) ?>;
+            --muted: <?= htmlspecialchars((string) ($themeDark['muted'] ?? '#9aadc8')) ?>;
+            --primary: <?= htmlspecialchars((string) ($themeDark['primary'] ?? '#8abfff')) ?>;
+            --primary-dark: <?= htmlspecialchars((string) ($themeDark['primary_dark'] ?? '#5fa7f8')) ?>;
+            --primary-ink: <?= htmlspecialchars((string) ($themeDark['primary_ink'] ?? '#081a30')) ?>;
+        }
+    </style>
     <script type="application/ld+json"><?= json_encode($jsonLd ?? [], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?></script>
 </head>
 <body>
@@ -46,6 +67,7 @@ declare(strict_types=1);
             <a href="index.php?page=faq">FAQ</a>
             <a href="index.php?page=kontakt">Kontakt</a>
         </nav>
+        <button class="theme-toggle" type="button" aria-label="Darkmode umschalten">Dark</button>
     </div>
 </header>
 <main>

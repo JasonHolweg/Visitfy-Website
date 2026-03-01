@@ -1,6 +1,49 @@
 (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const initThemeToggle = () => {
+    const root = document.documentElement;
+    const toggle = document.querySelector('.theme-toggle');
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const defaultTheme = root.dataset.defaultTheme || 'light';
+
+    const resolveTheme = (mode) => {
+      if (mode === 'auto') {
+        return mq.matches ? 'dark' : 'light';
+      }
+      return mode === 'dark' ? 'dark' : 'light';
+    };
+
+    const applyTheme = (mode) => {
+      const resolved = resolveTheme(mode);
+      root.setAttribute('data-theme', resolved);
+      root.setAttribute('data-theme-mode', mode);
+      if (toggle) {
+        toggle.textContent = resolved === 'dark' ? 'Light' : 'Dark';
+      }
+    };
+
+    const saved = localStorage.getItem('visitfy-theme');
+    const initialMode = saved || defaultTheme;
+    applyTheme(initialMode);
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'light';
+        const nextMode = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('visitfy-theme', nextMode);
+        applyTheme(nextMode);
+      });
+    }
+
+    mq.addEventListener('change', () => {
+      const mode = localStorage.getItem('visitfy-theme') || defaultTheme;
+      if (mode === 'auto') {
+        applyTheme('auto');
+      }
+    });
+  };
+
   const initMobileNav = () => {
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.getElementById('main-nav');
@@ -84,6 +127,7 @@
     counters.forEach((counter) => observer.observe(counter));
   };
 
+  initThemeToggle();
   initMobileNav();
   initParticles();
   initCounters();
