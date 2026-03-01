@@ -93,6 +93,20 @@
       "answer": "Ja, wir liefern eine einfache Einbindung für Website, Landingpages und Google-Profile."
     }
   ],
+  "tours": [
+    {
+      "title": "Rundgang 01",
+      "url": "https://my.matterport.com/show/?m=ZvsmkQVy6qB"
+    },
+    {
+      "title": "Rundgang 02",
+      "url": "https://my.matterport.com/show?play=1&lang=en-US&m=2s8oXwSFrPC"
+    },
+    {
+      "title": "Rundgang 03",
+      "url": "https://my.matterport.com/show?play=1&lang=en-US&m=1VKyHfuxX8J"
+    }
+  ],
   "seo": {
     "defaults": {
       "title": "Visitfy | 360° Rundgänge mit Ergebnisfokus",

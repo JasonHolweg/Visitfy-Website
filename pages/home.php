@@ -16,6 +16,20 @@ $processSteps = $content['process_steps'] ?? [
 ];
 $references = $content['references'] ?? [];
 $faqs = $content['faqs'] ?? [];
+$tours = $content['tours'] ?? [
+    [
+        'title' => 'Rundgang 01',
+        'url' => 'https://my.matterport.com/show/?m=ZvsmkQVy6qB',
+    ],
+    [
+        'title' => 'Rundgang 02',
+        'url' => 'https://my.matterport.com/show?play=1&lang=en-US&m=2s8oXwSFrPC',
+    ],
+    [
+        'title' => 'Rundgang 03',
+        'url' => 'https://my.matterport.com/show?play=1&lang=en-US&m=1VKyHfuxX8J',
+    ],
+];
 
 $primaryCtaText = $home['primary_cta_text'] ?? 'Jetzt Beratung anfragen';
 $primaryCtaLink = $home['primary_cta_link'] ?? 'index.php?page=kontakt';
@@ -55,6 +69,31 @@ $secondaryCtaLink = $home['secondary_cta_link'] ?? '#facts';
         </div>
     </div>
 </section>
+
+<?php if ($tours !== []): ?>
+<section class="tour-showcase">
+    <div class="container">
+        <h2>Beispiel-Rundgänge</h2>
+        <p class="section-intro">Scroll nach unten: Jeder Rundgang bleibt kurz fixiert, während der nächste darüber kommt.</p>
+    </div>
+    <div class="tour-stack">
+        <?php foreach ($tours as $index => $tour): ?>
+            <article class="tour-stage" style="z-index: <?= (int) ($index + 1) ?>;">
+                <div class="tour-card">
+                    <p class="tour-kicker"><?= htmlspecialchars((string) ($tour['title'] ?? 'Rundgang')) ?></p>
+                    <iframe
+                        src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
+                        title="<?= htmlspecialchars((string) ($tour['title'] ?? 'Matterport Rundgang')) ?>"
+                        loading="lazy"
+                        allow="fullscreen; xr-spatial-tracking;"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+            </article>
+        <?php endforeach; ?>
+    </div>
+</section>
+<?php endif; ?>
 
 <?php if ($industries !== []): ?>
 <section class="industries">

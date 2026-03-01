@@ -279,6 +279,54 @@ h1 {
   padding: 1.5rem 0 2.5rem;
 }
 
+.tour-showcase {
+  padding: 1.5rem 0 2.7rem;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+.tour-stack {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 1rem auto 0;
+}
+
+.tour-stage {
+  position: sticky;
+  top: 92px;
+  margin-bottom: 16vh;
+}
+
+.tour-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(249, 252, 255, 0.62);
+  backdrop-filter: blur(12px) saturate(125%);
+  box-shadow: 0 20px 40px rgba(20, 38, 68, 0.12);
+}
+
+.tour-kicker {
+  margin: 0;
+  padding: .75rem .95rem;
+  font-size: .84rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #4c6487;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(226, 239, 254, 0.62));
+}
+
+.tour-card iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #dce5f1;
+}
+
 .process-grid {
   display: grid;
   gap: .8rem;
@@ -458,6 +506,10 @@ td {
 
   .hero-glass {
     border-radius: 18px;
+  }
+
+  .tour-stage {
+    top: 78px;
   }
 }
 
