@@ -57,10 +57,24 @@ body {
 }
 
 .brand {
-  font-size: 1.2rem;
-  font-weight: 700;
   color: var(--text);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 44px;
+}
+
+.brand img {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+
+.brand span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .01em;
 }
 
 .nav-toggle {
@@ -91,7 +105,7 @@ footer a {
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: 4rem 0 7rem;
+  padding: 4rem 0 8.4rem;
 }
 
 .hero-bg,
@@ -191,13 +205,17 @@ footer a {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  overflow: hidden;
+  bottom: max(0px, env(safe-area-inset-bottom));
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: visible;
   border-top: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.36);
   backdrop-filter: blur(8px);
   z-index: 3;
-  padding: .25rem 0;
+  padding: .45rem 0;
 }
 
 .logo-track {
@@ -205,13 +223,13 @@ footer a {
   align-items: center;
   gap: 2.2rem;
   width: max-content;
-  padding: .65rem 0;
+  padding: .35rem 0;
   animation: logo-scroll 40s linear infinite;
 }
 
 .logo-item {
   width: 140px;
-  height: 62px;
+  height: 68px;
   display: grid;
   place-items: center;
   filter: grayscale(100%);
@@ -707,6 +725,10 @@ td {
     flex-wrap: wrap;
   }
 
+  .brand img {
+    height: 28px;
+  }
+
   .nav-toggle {
     display: inline-block;
   }
@@ -726,6 +748,7 @@ td {
   .hero {
     min-height: 100svh;
     padding-top: 4rem;
+    padding-bottom: 7.7rem;
   }
 
   .hero-glass {
@@ -734,7 +757,7 @@ td {
 
   .logo-item {
     width: 105px;
-    height: 50px;
+    height: 56px;
   }
 
   .tour-stage {
