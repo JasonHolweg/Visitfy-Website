@@ -1,0 +1,33 @@
+{
+  "home": {
+    "eyebrow": "360° Rundgänge für moderne Unternehmen",
+    "headline": "Mehr Sichtbarkeit. Mehr Vertrauen. Mehr Anfragen.",
+    "subline": "Visitfy erstellt hochwertige 360°-Erlebnisse für Immobilien, Gastronomie, Hotels und Praxen."
+  },
+  "kpis": [
+    {
+      "label": "Jahre Erfahrung",
+      "value": 7,
+      "suffix": "+",
+      "duration": 1300
+    },
+    {
+      "label": "Abgeschlossene Projekte",
+      "value": 420,
+      "suffix": "+",
+      "duration": 1500
+    },
+    {
+      "label": "Zufriedene Kunden",
+      "value": 98,
+      "suffix": "%",
+      "duration": 1700
+    },
+    {
+      "label": "Ø Lieferzeit",
+      "value": 5,
+      "suffix": "T",
+      "duration": 1200
+    }
+  ]
+}
