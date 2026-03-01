@@ -111,6 +111,29 @@
       "url": "https://my.matterport.com/show?play=1&lang=en-US&m=1VKyHfuxX8J"
     }
   ],
+  "team": [
+    {
+      "name": "Kristian Meister",
+      "role": "Geschäftsführer",
+      "image": "assets/images/team/kristian-meister-placeholder.svg",
+      "bio": "Leitet Visitfy mit Fokus auf Qualität, klare Kommunikation und messbare Ergebnisse.",
+      "quote": "Jeder Rundgang muss Vertrauen in Sekunden erzeugen."
+    },
+    {
+      "name": "Fabian Meister",
+      "role": "Marketing & Vertrieb",
+      "image": "assets/images/team/fabian-meister-placeholder.svg",
+      "bio": "Verbindet Zielgruppenverständnis mit vertriebsstarken Botschaften und sauberem Lead-Funnel.",
+      "quote": "Sichtbarkeit ist gut, qualifizierte Anfragen sind besser."
+    },
+    {
+      "name": "Jason Holweg",
+      "role": "Entwicklung",
+      "image": "assets/images/team/jason-holweg-placeholder.svg",
+      "bio": "Ich bin nicht nur Entwickler, sondern auch Inhaber von Flora Kaffee & Eisbar, einem Eiscafe. So kenne ich die Bedürfnisse der Gastronomie aus erster Hand und verbinde sie mit technischem Know-how im Digitalen.",
+      "quote": "Technik muss im Alltag von Betrieben direkt Mehrwert liefern."
+    }
+  ],
   "seo": {
     "defaults": {
       "title": "Visitfy | 360° Rundgänge mit Ergebnisfokus",
@@ -178,6 +201,6 @@
     "postal_code": "10115",
     "city": "Berlin",
     "country": "DE",
-    "logo": "/assets/img/logo.png"
+    "logo": "/assets/images/visitfy-logo.png"
   }
 }

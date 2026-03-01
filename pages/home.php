@@ -17,6 +17,29 @@ $processSteps = $content['process_steps'] ?? [
 ];
 $references = $content['references'] ?? [];
 $faqs = $content['faqs'] ?? [];
+$team = $content['team'] ?? [
+    [
+        'name' => 'Kristian Meister',
+        'role' => 'Geschäftsführer',
+        'image' => 'assets/images/team/kristian-meister-placeholder.svg',
+        'bio' => 'Leitet Visitfy mit Fokus auf Qualität, klare Kommunikation und messbare Ergebnisse.',
+        'quote' => 'Jeder Rundgang muss Vertrauen in Sekunden erzeugen.',
+    ],
+    [
+        'name' => 'Fabian Meister',
+        'role' => 'Marketing & Vertrieb',
+        'image' => 'assets/images/team/fabian-meister-placeholder.svg',
+        'bio' => 'Verbindet Zielgruppenverständnis mit vertriebsstarken Botschaften und sauberem Lead-Funnel.',
+        'quote' => 'Sichtbarkeit ist gut, qualifizierte Anfragen sind besser.',
+    ],
+    [
+        'name' => 'Jason Holweg',
+        'role' => 'Entwicklung',
+        'image' => 'assets/images/team/jason-holweg-placeholder.svg',
+        'bio' => 'Ich bin nicht nur Entwickler, sondern auch Inhaber von Flora Kaffee & Eisbar, einem Eiscafe. So kenne ich die Bedürfnisse der Gastronomie aus erster Hand und verbinde sie mit technischem Know-how im Digitalen.',
+        'quote' => 'Technik muss im Alltag von Betrieben direkt Mehrwert liefern.',
+    ],
+];
 $tours = $content['tours'] ?? [
     [
         'title' => 'Rundgang 01',
@@ -112,6 +135,29 @@ foreach ($logoFiles as $file) {
                 </div>
             </article>
         <?php endforeach; ?>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if ($team !== []): ?>
+<section class="team-section">
+    <div class="container">
+        <h2>Das Team hinter Visitfy</h2>
+        <div class="team-list">
+            <?php foreach ($team as $member): ?>
+                <article class="team-member">
+                    <div class="team-image">
+                        <img src="<?= htmlspecialchars((string) ($member['image'] ?? '')) ?>" alt="<?= htmlspecialchars((string) ($member['name'] ?? 'Teammitglied')) ?>" loading="lazy">
+                    </div>
+                    <div class="team-content">
+                        <p class="team-role"><?= htmlspecialchars((string) ($member['role'] ?? '')) ?></p>
+                        <h3><?= htmlspecialchars((string) ($member['name'] ?? '')) ?></h3>
+                        <p><?= htmlspecialchars((string) ($member['bio'] ?? '')) ?></p>
+                        <p class="team-quote">“<?= htmlspecialchars((string) ($member['quote'] ?? '')) ?>”</p>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
 <?php endif; ?>
