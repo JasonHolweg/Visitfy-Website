@@ -144,7 +144,9 @@ foreach ($logoFiles as $file) {
                 <div class="tour-card">
                     <p class="tour-kicker"><?= htmlspecialchars((string) ($tour['title'] ?? 'Rundgang')) ?></p>
                     <iframe
-                        src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
+                        src="about:blank"
+                        data-src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
+                        class="tour-iframe"
                         title="<?= htmlspecialchars((string) ($tour['title'] ?? 'Matterport Rundgang')) ?>"
                         loading="lazy"
                         allow="fullscreen; xr-spatial-tracking;"
@@ -158,12 +160,12 @@ foreach ($logoFiles as $file) {
 <?php endif; ?>
 
 <?php if ($team !== []): ?>
-<section class="team-section">
+<section class="team-section reveal-section">
     <div class="container">
-        <h2>Das Team hinter Visitfy</h2>
+        <h2 class="reveal-up" style="--reveal-delay: 120ms;">Das Team hinter Visitfy</h2>
         <div class="team-list">
             <?php foreach ($team as $member): ?>
-                <article class="team-member">
+                <article class="team-member reveal-up" style="--reveal-delay: 120ms;">
                     <div class="team-image">
                         <img src="<?= htmlspecialchars((string) ($member['image'] ?? '')) ?>" alt="<?= htmlspecialchars((string) ($member['name'] ?? 'Teammitglied')) ?>" loading="lazy">
                     </div>
@@ -180,15 +182,15 @@ foreach ($logoFiles as $file) {
 </section>
 <?php endif; ?>
 
-<section class="industries-alt">
+<section class="industries-alt reveal-section">
     <div class="section-bg" aria-hidden="true">
         <div class="particle-layer" data-particles="24"></div>
     </div>
     <div class="container">
-        <h2><?= htmlspecialchars($home['industries_headline'] ?? 'Branchen, die wir unterstützen') ?></h2>
+        <h2 class="reveal-up" style="--reveal-delay: 40ms;"><?= htmlspecialchars($home['industries_headline'] ?? 'Branchen, die wir unterstützen') ?></h2>
         <div class="industry-mosaic">
             <?php foreach ($industryTiles as $index => $industry): ?>
-                <article class="industry-tile <?= in_array($index, [0, 3], true) ? 'square' : 'wide' ?>">
+                <article class="industry-tile reveal <?= $index % 2 === 0 ? 'from-left' : 'from-right' ?> <?= in_array($index, [0, 3], true) ? 'square' : 'wide' ?>" style="--reveal-delay: <?= (int) (($index + 1) * 110) ?>ms;">
                     <h3><?= htmlspecialchars((string) ($industry['title'] ?? '')) ?></h3>
                     <p><?= htmlspecialchars((string) ($industry['description'] ?? '')) ?></p>
                 </article>
@@ -197,12 +199,12 @@ foreach ($logoFiles as $file) {
     </div>
 </section>
 
-<section class="process-modern">
+<section class="process-modern reveal-section">
     <div class="container">
-        <h2><?= htmlspecialchars($home['process_headline'] ?? 'So läuft es ab') ?></h2>
+        <h2 class="reveal-up" style="--reveal-delay: 120ms;"><?= htmlspecialchars($home['process_headline'] ?? 'So läuft es ab') ?></h2>
         <div class="process-track">
             <?php foreach ($processSteps as $index => $step): ?>
-                <article class="process-step">
+                <article class="process-step reveal-up" style="--reveal-delay: 120ms;">
                     <span class="process-number"><?= $index + 1 ?></span>
                     <h3><?= htmlspecialchars((string) ($step['title'] ?? '')) ?></h3>
                     <p><?= htmlspecialchars((string) ($step['description'] ?? '')) ?></p>
@@ -213,12 +215,12 @@ foreach ($logoFiles as $file) {
 </section>
 
 <?php if ($mockups !== []): ?>
-<section class="mockup-section">
+<section class="mockup-section reveal-section">
     <div class="container">
-        <h2>Mockup Vorschau</h2>
+        <h2 class="reveal-up" style="--reveal-delay: 120ms;">Mockup Vorschau</h2>
         <div class="mockup-grid">
             <?php foreach ($mockups as $mockup): ?>
-                <article class="mockup-card">
+                <article class="mockup-card reveal-up" style="--reveal-delay: 120ms;">
                     <img src="<?= htmlspecialchars((string) ($mockup['image'] ?? '')) ?>" alt="<?= htmlspecialchars((string) ($mockup['title'] ?? 'Mockup')) ?>" loading="lazy">
                     <p><?= htmlspecialchars((string) ($mockup['title'] ?? 'Mockup')) ?></p>
                 </article>
@@ -229,12 +231,12 @@ foreach ($logoFiles as $file) {
 <?php endif; ?>
 
 <?php if ($references !== []): ?>
-<section class="references">
+<section class="references reveal-section">
     <div class="container">
-        <h2><?= htmlspecialchars($home['references_headline'] ?? 'Referenzen') ?></h2>
+        <h2 class="reveal-up" style="--reveal-delay: 120ms;"><?= htmlspecialchars($home['references_headline'] ?? 'Referenzen') ?></h2>
         <div class="card-grid">
             <?php foreach ($references as $reference): ?>
-                <article class="info-card">
+                <article class="info-card reveal-up" style="--reveal-delay: 120ms;">
                     <h3><?= htmlspecialchars((string) ($reference['name'] ?? '')) ?></h3>
                     <p class="reference-result"><?= htmlspecialchars((string) ($reference['result'] ?? '')) ?></p>
                     <p><?= htmlspecialchars((string) ($reference['description'] ?? '')) ?></p>
@@ -246,12 +248,12 @@ foreach ($logoFiles as $file) {
 <?php endif; ?>
 
 <?php if ($faqs !== []): ?>
-<section class="home-faq">
+<section class="home-faq reveal-section">
     <div class="container">
-        <h2><?= htmlspecialchars($home['faq_headline'] ?? 'Häufige Fragen') ?></h2>
+        <h2 class="reveal-up" style="--reveal-delay: 120ms;"><?= htmlspecialchars($home['faq_headline'] ?? 'Häufige Fragen') ?></h2>
         <div class="faq-list">
             <?php foreach ($faqs as $faq): ?>
-                <article class="faq-item">
+                <article class="faq-item reveal-up" style="--reveal-delay: 120ms;">
                     <h3><?= htmlspecialchars((string) ($faq['question'] ?? '')) ?></h3>
                     <p><?= htmlspecialchars((string) ($faq['answer'] ?? '')) ?></p>
                 </article>
@@ -261,8 +263,8 @@ foreach ($logoFiles as $file) {
 </section>
 <?php endif; ?>
 
-<section class="home-cta">
-    <div class="container home-cta-wrap">
+<section class="home-cta reveal-section">
+    <div class="container home-cta-wrap reveal-up" style="--reveal-delay: 120ms;">
         <div class="home-cta-copy">
             <h2><?= htmlspecialchars($home['cta_headline'] ?? 'Bereit für deinen 360° Auftritt?') ?></h2>
             <p><?= htmlspecialchars($home['cta_text'] ?? 'Wir erstellen dir ein klares Angebot mit Zeitplan und transparenten Kosten.') ?></p>
@@ -277,21 +279,21 @@ foreach ($logoFiles as $file) {
     </div>
 </section>
 
-<section class="social-section">
+<section class="social-section reveal-section">
     <div class="container">
-        <h2>Folge Visitfy</h2>
-        <div class="social-links">
+        <h2 class="reveal-up" style="--reveal-delay: 120ms;">Folge Visitfy</h2>
+        <div class="social-links reveal-up" style="--reveal-delay: 120ms;">
             <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['instagram'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['facebook'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">Facebook</a>
             <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['tiktok'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">TikTok</a>
         </div>
-        <div class="desktop-video-wrap">
+        <div class="desktop-video-wrap reveal-up" style="--reveal-delay: 120ms;">
             <video controls preload="metadata" playsinline>
                 <source src="<?= htmlspecialchars((string) ($socials['desktop_video'] ?? 'assets/videos/erklaerung.mp4')) ?>" type="video/mp4">
                 Dein Browser unterstützt kein HTML5-Video.
             </video>
         </div>
-        <div class="tiktok-wrap mobile-only">
+        <div class="tiktok-wrap mobile-only reveal-up" style="--reveal-delay: 120ms;">
             <iframe
                 src="<?= htmlspecialchars((string) ($socials['tiktok_embed'] ?? '')) ?>"
                 title="Visitfy TikTok Video"
