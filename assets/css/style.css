@@ -89,6 +89,7 @@ html[data-theme="dark"] .logo-item {
 
 html[data-theme="dark"] .brand img {
   filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(147, 201, 255, 0.4));
+  animation: logo-shimmer-dark 12s ease-in-out infinite;
 }
 
 html[data-theme="dark"] .scan-grid {
@@ -139,22 +140,37 @@ html[data-theme="dark"] .scan-beam {
   display: block;
   height: 38px;
   width: auto;
-  filter: brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.28));
-  animation: logo-shimmer 12s ease-in-out infinite;
+  filter: brightness(0) saturate(100%) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.22));
+  animation: logo-shimmer-light 12s ease-in-out infinite;
 }
 
-@keyframes logo-shimmer {
+@keyframes logo-shimmer-light {
   0%, 72%, 100% {
-    filter: brightness(0) invert(1) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.28));
+    filter: brightness(0) saturate(100%) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.22));
   }
   76% {
-    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(182, 219, 255, 0.75));
+    filter: brightness(0) saturate(100%) drop-shadow(0 0 6px rgba(145, 201, 255, 0.45));
   }
   80% {
-    filter: brightness(0) invert(1) drop-shadow(0 0 14px rgba(145, 201, 255, 0.92));
+    filter: brightness(0) saturate(100%) drop-shadow(0 0 10px rgba(145, 201, 255, 0.65));
   }
   84% {
-    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(182, 219, 255, 0.72));
+    filter: brightness(0) saturate(100%) drop-shadow(0 0 5px rgba(145, 201, 255, 0.4));
+  }
+}
+
+@keyframes logo-shimmer-dark {
+  0%, 72%, 100% {
+    filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(147, 201, 255, 0.4));
+  }
+  76% {
+    filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(182, 219, 255, 0.7));
+  }
+  80% {
+    filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(145, 201, 255, 0.95));
+  }
+  84% {
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(182, 219, 255, 0.65));
   }
 }
 
