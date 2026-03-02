@@ -23,6 +23,27 @@
   "about": {
     "image": ""
   },
+  "partner": {
+    "headline": "Wir suchen Dich!",
+    "subline": "Dein Business. Deine Stadt. Dein Erfolg.",
+    "intro": "Werde unser offizieller Partner für virtuelle 360°-Rundgänge und starte in deiner Stadt durch.",
+    "cta_headline": "Bereit, durchzustarten?",
+    "cta_text": "Fülle jetzt das kurze Formular aus – wir melden uns persönlich bei dir. Unverbindlich. Ohne Risiko. Nur echtes Interesse zählt.",
+    "benefits": [
+      {
+        "title": "Funktionierendes System",
+        "description": "Wir haben's getestet. Verfeinert. Wiederholt. Was du bekommst, ist nicht neu – sondern durchdacht, schlank und wirksam."
+      },
+      {
+        "title": "Geringes Startkapital",
+        "description": "Du brauchst kein Büro, kein Lager und keine teure Ausstattung. Starte smart – mit einem klaren Plan und wenig Risiko. Was zählt: dein Einsatz und dein Wille, wirklich loszulegen."
+      },
+      {
+        "title": "Nicht allein. Nie.",
+        "description": "Bei Fragen rufst du nicht irgendwo an – sondern direkt bei uns. Du bekommst echten Support, kein Ticketsystem. Persönlich. Ehrlich. Schnell."
+      }
+    ]
+  },
   "kpis": [
     {
       "label": "Jahre Erfahrung",
@@ -270,6 +291,14 @@
         "robots": "index,follow",
         "og_title": "Datenschutz Visitfy",
         "og_description": "Datenschutzinformationen.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      },
+      "partner": {
+        "title": "Partner werden | Visitfy",
+        "description": "Werde unser offizieller Partner für 360° Rundgänge. Funktionierendes System, geringes Startkapital, persönlicher Support.",
+        "robots": "index,follow",
+        "og_title": "Partner werden bei Visitfy",
+        "og_description": "Dein Business. Deine Stadt. Dein Erfolg.",
         "og_image": "/assets/img/og-visitfy.jpg"
       }
     }

@@ -11,6 +11,7 @@ final class Router
         'kontakt',
         'impressum',
         'datenschutz',
+        'partner',
     ];
 
     public function resolvePage(?string $page): string

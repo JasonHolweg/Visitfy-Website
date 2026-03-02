@@ -19,7 +19,17 @@
       root.setAttribute('data-theme', resolved);
       root.setAttribute('data-theme-mode', mode);
       if (toggle) {
-        toggle.textContent = resolved === 'dark' ? 'Light' : 'Dark';
+        const sunIcon = toggle.querySelector('.sun');
+        const moonIcon = toggle.querySelector('.moon');
+        if (sunIcon && moonIcon) {
+          if (resolved === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+          } else {
+            sunIcon.style.display = 'inline';
+            moonIcon.style.display = 'none';
+          }
+        }
       }
     };
 

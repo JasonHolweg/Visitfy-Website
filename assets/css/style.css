@@ -54,6 +54,7 @@ html[data-theme="dark"] .process-step,
 html[data-theme="dark"] .info-card,
 html[data-theme="dark"] .faq-item,
 html[data-theme="dark"] .testimonial-card,
+html[data-theme="dark"] .benefit-card,
 html[data-theme="dark"] .home-cta-wrap,
 html[data-theme="dark"] .mockup-card,
 html[data-theme="dark"] .desktop-video-wrap,
@@ -201,6 +202,30 @@ html[data-theme="dark"] .scan-beam {
   padding: .45rem .8rem;
   font: inherit;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  transition: background .3s ease, border-color .3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: var(--primary);
+}
+
+.theme-icon {
+  display: none;
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+.theme-icon.sun {
+  display: inline;
+}
+
+.theme-icon.moon {
+  display: none;
 }
 
 .theme-color-row {
@@ -239,6 +264,16 @@ html[data-theme="dark"] .scan-beam {
 footer a {
   color: var(--text);
   text-decoration: none;
+}
+
+.main-nav .nav-partner {
+  display: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .hero {
@@ -502,6 +537,11 @@ h1 {
   backdrop-filter: blur(10px);
   cursor: pointer;
   transition: all .25s ease;
+}
+
+.btn-sm {
+  padding: .5rem .8rem;
+  font-size: 0.9rem;
 }
 
 .btn-primary {
@@ -989,7 +1029,6 @@ h1 {
 
 .about-hero-block h2 {
   margin: 0;
-  max-width: 22ch;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -1083,6 +1122,7 @@ h1 {
 .info-card,
 .faq-item,
 .testimonial-card,
+.benefit-card,
 .home-cta-wrap,
 .desktop-video-wrap,
 .tiktok-wrap {
@@ -1097,6 +1137,7 @@ h1 {
 .info-card:hover,
 .faq-item:hover,
 .testimonial-card:hover,
+.benefit-card:hover,
 .home-cta-wrap:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(20, 38, 68, 0.11);
@@ -1195,6 +1236,73 @@ h1 {
   line-height: 1.6;
   color: var(--text);
   font-style: italic;
+}
+
+/* Partner Page Styles */
+.benefits-section {
+  padding: 5rem 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.benefit-card {
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  backdrop-filter: blur(11px) saturate(130%);
+  box-shadow: 0 14px 30px rgba(20, 38, 68, 0.06);
+  transition: transform .5s ease, box-shadow .5s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(20, 38, 68, 0.11);
+}
+
+.benefit-card h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.partner-hero {
+  min-height: 100svh;
+}
+
+.partner-cta,
+.partner-cta-wrap {
+  background: linear-gradient(125deg, rgba(225, 239, 255, 0.72), rgba(246, 250, 255, 0.78));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2.5rem;
+  margin: 5rem 0;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 34px rgba(20, 38, 68, 0.09);
+}
+
+.partner-cta-content {
+  text-align: center;
+}
+
+.partner-cta-content h2 {
+  margin-bottom: 1rem;
+}
+
+.partner-cta-content p {
+  margin-bottom: 2rem;
+  color: var(--muted);
+  font-size: 1.05rem;
 }
 
 .home-cta .narrow {
@@ -1523,6 +1631,18 @@ td {
 
   .main-nav.open {
     display: flex;
+  }
+
+  .main-nav .nav-partner {
+    display: block;
+  }
+
+  .nav-right {
+    gap: 0.6rem;
+  }
+
+  .nav-right .btn-sm {
+    display: none;
   }
 
   .hero {
