@@ -133,17 +133,8 @@
   };
 
   const initLazyMedia = () => {
-    const lazyIframes = Array.from(document.querySelectorAll('iframe.lazy-iframe[data-src]'));
     const lazyVideos = Array.from(document.querySelectorAll('video.lazy-video'));
-    if (!lazyIframes.length && !lazyVideos.length) return;
-
-    const loadIframe = (frame) => {
-      if (frame.dataset.loaded === '1') return;
-      const src = frame.getAttribute('data-src');
-      if (!src) return;
-      frame.setAttribute('src', src);
-      frame.dataset.loaded = '1';
-    };
+    if (!lazyVideos.length) return;
 
     const loadVideo = (video) => {
       if (video.dataset.loaded === '1') return;
@@ -157,7 +148,6 @@
     };
 
     if (!('IntersectionObserver' in window)) {
-      lazyIframes.forEach(loadIframe);
       lazyVideos.forEach(loadVideo);
       return;
     }
@@ -166,16 +156,13 @@
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
-        if (el.tagName === 'IFRAME') {
-          loadIframe(el);
-        } else if (el.tagName === 'VIDEO') {
+        if (el.tagName === 'VIDEO') {
           loadVideo(el);
         }
         obs.unobserve(el);
       });
     }, { threshold: 0.01, rootMargin: '280px 0px' });
 
-    lazyIframes.forEach((frame) => observer.observe(frame));
     lazyVideos.forEach((video) => observer.observe(video));
   };
 

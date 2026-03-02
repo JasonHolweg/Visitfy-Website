@@ -145,11 +145,8 @@ foreach ($logoFiles as $file) {
                 <div class="tour-card">
                     <p class="tour-kicker"><?= htmlspecialchars((string) ($tour['title'] ?? 'Rundgang')) ?></p>
                     <iframe
-                        src="about:blank"
-                        data-src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
-                        class="lazy-iframe"
+                        src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
                         title="<?= htmlspecialchars((string) ($tour['title'] ?? 'Matterport Rundgang')) ?>"
-                        loading="lazy"
                         allow="fullscreen; xr-spatial-tracking;"
                         allowfullscreen
                     ></iframe>
@@ -326,11 +323,8 @@ foreach ($logoFiles as $file) {
         </div>
         <div class="tiktok-wrap mobile-only reveal-up" style="--reveal-delay: 220ms;">
             <iframe
-                src="about:blank"
-                data-src="<?= htmlspecialchars((string) ($socials['tiktok_embed'] ?? '')) ?>"
-                class="lazy-iframe"
+                src="<?= htmlspecialchars((string) ($socials['tiktok_embed'] ?? '')) ?>"
                 title="Visitfy TikTok Video"
-                loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture;"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen

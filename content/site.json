@@ -20,6 +20,9 @@
     "cta_person_image": "assets/images/team/kristian-cta-placeholder.svg",
     "cta_person_name": "Kristian Meister"
   },
+  "about": {
+    "image": ""
+  },
   "kpis": [
     {
       "label": "Jahre Erfahrung",
