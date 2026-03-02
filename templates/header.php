@@ -66,8 +66,15 @@ declare(strict_types=1);
             <a href="index.php?page=about">Über uns</a>
             <a href="index.php?page=faq">FAQ</a>
             <a href="index.php?page=kontakt">Kontakt</a>
+            <a href="index.php?page=partner" class="nav-partner">Partner</a>
         </nav>
-        <button class="theme-toggle" type="button" aria-label="Darkmode umschalten">Dark</button>
+        <div class="nav-right">
+            <button class="theme-toggle" type="button" aria-label="Darkmode umschalten" title="Theme umschalten">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </button>
+            <a class="btn btn-primary btn-sm" href="index.php?page=partner">Partner werden</a>
+        </div>
     </div>
 </header>
 <main>

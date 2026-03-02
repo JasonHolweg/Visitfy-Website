@@ -13,6 +13,7 @@ $data['home'] = $data['home'] ?? [];
 $data['team'] = $data['team'] ?? [];
 $data['mockups'] = $data['mockups'] ?? [];
 $data['company'] = $data['company'] ?? [];
+$data['about'] = $data['about'] ?? [];
 
 $messages = [];
 $errors = [];
@@ -98,6 +99,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $messages[] = 'CTA-Bild aktualisiert.';
     }
 
+    [$aboutPath, $aboutError] = uploadImage($_FILES['about_image'] ?? [], 'about', 'about-image');
+    if ($aboutError !== null) {
+        $errors[] = 'About Bild: ' . $aboutError;
+    }
+    if ($aboutPath !== null) {
+        $data['about']['image'] = $aboutPath;
+        $updated = true;
+        $messages[] = 'About-Bild aktualisiert.';
+    }
+
     for ($i = 0; $i < 3; $i++) {
         $field = 'team_image_' . $i;
         [$path, $error] = uploadImage($_FILES[$field] ?? [], 'team', 'team-' . ($i + 1));
@@ -145,6 +156,7 @@ $ctaImage = (string) ($data['home']['cta_person_image'] ?? '');
 $team = is_array($data['team']) ? $data['team'] : [];
 $mockups = is_array($data['mockups']) ? $data['mockups'] : [];
 $logo = (string) ($data['company']['logo'] ?? '');
+$aboutImage = (string) ($data['about']['image'] ?? '');
 ?>
 <!doctype html>
 <html lang="de">
@@ -184,6 +196,15 @@ $logo = (string) ($data['company']['logo'] ?? '');
             <?php if ($ctaImage !== ''): ?>
                 <p>Aktuell: <?= htmlspecialchars($ctaImage) ?></p>
                 <img class="admin-preview" src="../<?= htmlspecialchars($ctaImage) ?>" alt="CTA Bild">
+            <?php endif; ?>
+
+            <h2>About Us Bild</h2>
+            <label>About Bild
+                <input type="file" name="about_image" accept=".png,.jpg,.jpeg,.webp,.svg,image/*">
+            </label>
+            <?php if ($aboutImage !== ''): ?>
+                <p>Aktuell: <?= htmlspecialchars($aboutImage) ?></p>
+                <img class="admin-preview" src="../<?= htmlspecialchars($aboutImage) ?>" alt="About Bild">
             <?php endif; ?>
 
             <h2>Team Bilder</h2>

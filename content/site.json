@@ -11,6 +11,7 @@
     "industries_headline": "Branchen, die wir unterstützen",
     "process_headline": "So läuft es ab",
     "references_headline": "Referenzen mit Ergebnis",
+    "testimonials_headline": "Das sagen unsere Kunden",
     "faq_headline": "Häufige Fragen",
     "cta_headline": "Bereit für deinen 360° Auftritt?",
     "cta_text": "Wir erstellen dir ein klares Angebot mit Zeitplan und transparenten Kosten.",
@@ -18,6 +19,30 @@
     "cta_button_link": "index.php?page=kontakt",
     "cta_person_image": "assets/images/team/kristian-cta-placeholder.svg",
     "cta_person_name": "Kristian Meister"
+  },
+  "about": {
+    "image": ""
+  },
+  "partner": {
+    "headline": "Wir suchen Dich!",
+    "subline": "Dein Business. Deine Stadt. Dein Erfolg.",
+    "intro": "Werde unser offizieller Partner für virtuelle 360°-Rundgänge und starte in deiner Stadt durch.",
+    "cta_headline": "Bereit, durchzustarten?",
+    "cta_text": "Fülle jetzt das kurze Formular aus – wir melden uns persönlich bei dir. Unverbindlich. Ohne Risiko. Nur echtes Interesse zählt.",
+    "benefits": [
+      {
+        "title": "Funktionierendes System",
+        "description": "Wir haben's getestet. Verfeinert. Wiederholt. Was du bekommst, ist nicht neu – sondern durchdacht, schlank und wirksam."
+      },
+      {
+        "title": "Geringes Startkapital",
+        "description": "Du brauchst kein Büro, kein Lager und keine teure Ausstattung. Starte smart – mit einem klaren Plan und wenig Risiko. Was zählt: dein Einsatz und dein Wille, wirklich loszulegen."
+      },
+      {
+        "title": "Nicht allein. Nie.",
+        "description": "Bei Fragen rufst du nicht irgendwo an – sondern direkt bei uns. Du bekommst echten Support, kein Ticketsystem. Persönlich. Ehrlich. Schnell."
+      }
+    ]
   },
   "kpis": [
     {
@@ -87,6 +112,38 @@
       "name": "Restaurant Beispiel",
       "result": "+27% Reservierungsanfragen",
       "description": "Mehr Vertrauen vor dem Besuch durch sichtbare Raumwirkung und Atmosphäre."
+    }
+  ],
+  "testimonials": [
+    {
+      "company": "Flora Kaffee & Eisbar",
+      "context": "2 Rundgänge an zwei verschiedenen Standorten",
+      "ratings": {
+        "service": 5,
+        "geschwindigkeit": 5,
+        "ergebnis": 5
+      },
+      "comment": "Die Rundgänge haben unsere Hemmschwelle komplett gesenkt. Viele Gäste trauen sich jetzt erst rein, weil sie den Ort vorher online schon besucht haben. Es fühlt sich an, als wären sie schon da gewesen – das hilft ihnen beim ersten Schritt ungemein!"
+    },
+    {
+      "company": "Danbo Flensburg",
+      "context": "Digitale Möbelpräsentation für E-Commerce",
+      "ratings": {
+        "service": 5,
+        "geschwindigkeit": 5,
+        "ergebnis": 5
+      },
+      "comment": "Der Rundgang überzeugt neue Kunden schnell von unserem Inventar. Viele nutzen den virtuellen Besuch, um sich einen realistischen Eindruck zu machen, bevor sie zu uns ins Geschäft kommen. Das hat unseren Online-Vertrieb spürbar unterstützt."
+    },
+    {
+      "company": "Buddha Lounge",
+      "context": "360° Präsentation des Sushi-Restaurants im Sterne-Hotel",
+      "ratings": {
+        "service": 5,
+        "geschwindigkeit": 5,
+        "ergebnis": 5
+      },
+      "comment": "Der perfekte erste Eindruck für unsere Gastbereich! Die Umsetzung war unkompliziert – vom Rundgang bis zur Integration auf Website und Google Maps lief alles smooth. Gäste reservieren jetzt gezielter, weil sie unsere Atmosphäre bereits kennen."
     }
   ],
   "faqs": [
@@ -234,6 +291,14 @@
         "robots": "index,follow",
         "og_title": "Datenschutz Visitfy",
         "og_description": "Datenschutzinformationen.",
+        "og_image": "/assets/img/og-visitfy.jpg"
+      },
+      "partner": {
+        "title": "Partner werden | Visitfy",
+        "description": "Werde unser offizieller Partner für 360° Rundgänge. Funktionierendes System, geringes Startkapital, persönlicher Support.",
+        "robots": "index,follow",
+        "og_title": "Partner werden bei Visitfy",
+        "og_description": "Dein Business. Deine Stadt. Dein Erfolg.",
         "og_image": "/assets/img/og-visitfy.jpg"
       }
     }

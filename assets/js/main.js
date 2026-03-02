@@ -19,7 +19,17 @@
       root.setAttribute('data-theme', resolved);
       root.setAttribute('data-theme-mode', mode);
       if (toggle) {
-        toggle.textContent = resolved === 'dark' ? 'Light' : 'Dark';
+        const sunIcon = toggle.querySelector('.sun');
+        const moonIcon = toggle.querySelector('.moon');
+        if (sunIcon && moonIcon) {
+          if (resolved === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+          } else {
+            sunIcon.style.display = 'inline';
+            moonIcon.style.display = 'none';
+          }
+        }
       }
     };
 
@@ -132,6 +142,40 @@
     counters.forEach((counter) => observer.observe(counter));
   };
 
+  const initLazyMedia = () => {
+    const lazyVideos = Array.from(document.querySelectorAll('video.lazy-video'));
+    if (!lazyVideos.length) return;
+
+    const loadVideo = (video) => {
+      if (video.dataset.loaded === '1') return;
+      const source = video.querySelector('source[data-src]');
+      if (!source) return;
+      const src = source.getAttribute('data-src');
+      if (!src) return;
+      source.setAttribute('src', src);
+      video.load();
+      video.dataset.loaded = '1';
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      lazyVideos.forEach(loadVideo);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        if (el.tagName === 'VIDEO') {
+          loadVideo(el);
+        }
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.01, rootMargin: '280px 0px' });
+
+    lazyVideos.forEach((video) => observer.observe(video));
+  };
+
   const initScrollReveal = () => {
     const sections = document.querySelectorAll('.anim-section');
     if (!sections.length) return;
@@ -155,6 +199,7 @@
   initThemeToggle();
   initMobileNav();
   initParticles();
+  initLazyMedia();
   initScrollReveal();
   initCounters();
 })();

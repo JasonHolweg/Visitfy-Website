@@ -16,6 +16,7 @@ $processSteps = $content['process_steps'] ?? [
     ['title' => 'Veröffentlichung', 'description' => 'Einbindung in Website, Maps und Social Channels.'],
 ];
 $references = $content['references'] ?? [];
+$testimonials = $content['testimonials'] ?? [];
 $faqs = $content['faqs'] ?? [];
 $team = $content['team'] ?? [
     [
@@ -146,7 +147,6 @@ foreach ($logoFiles as $file) {
                     <iframe
                         src="<?= htmlspecialchars((string) ($tour['url'] ?? '')) ?>"
                         title="<?= htmlspecialchars((string) ($tour['title'] ?? 'Matterport Rundgang')) ?>"
-                        loading="lazy"
                         allow="fullscreen; xr-spatial-tracking;"
                         allowfullscreen
                     ></iframe>
@@ -246,6 +246,35 @@ foreach ($logoFiles as $file) {
 </section>
 <?php endif; ?>
 
+<?php if ($testimonials !== []): ?>
+<section class="testimonials-section anim-section">
+    <div class="container">
+        <h2 class="reveal-up" style="--reveal-delay: 100ms;"><?= htmlspecialchars($home['testimonials_headline'] ?? 'Das sagen unsere Kunden') ?></h2>
+        <div class="testimonials-grid">
+            <?php foreach ($testimonials as $testimonial): ?>
+                <article class="testimonial-card reveal-up" style="--reveal-delay: 180ms;">
+                    <div class="testimonial-header">
+                        <h3><?= htmlspecialchars((string) ($testimonial['company'] ?? '')) ?></h3>
+                        <p class="testimonial-context"><?= htmlspecialchars((string) ($testimonial['context'] ?? '')) ?></p>
+                    </div>
+                    
+                    <div class="testimonial-ratings" aria-label="Bewertung: 5 von 5 Sternen">
+                        <div class="star-rating" aria-hidden="true">
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <span class="star filled">★</span>
+                            <?php endfor; ?>
+                        </div>
+                        <p class="rating-summary">5 von 5 Sternen</p>
+                    </div>
+                    
+                    <p class="testimonial-comment"><?= htmlspecialchars((string) ($testimonial['comment'] ?? '')) ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <?php if ($faqs !== []): ?>
 <section class="home-faq anim-section">
     <div class="container">
@@ -287,8 +316,8 @@ foreach ($logoFiles as $file) {
             <a class="btn btn-outline" href="<?= htmlspecialchars((string) ($socials['tiktok'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer">TikTok</a>
         </div>
         <div class="desktop-video-wrap reveal-up" style="--reveal-delay: 220ms;">
-            <video controls preload="metadata" playsinline>
-                <source src="<?= htmlspecialchars((string) ($socials['desktop_video'] ?? 'assets/videos/erklaerung.mp4')) ?>" type="video/mp4">
+            <video controls preload="none" playsinline class="lazy-video">
+                <source data-src="<?= htmlspecialchars((string) ($socials['desktop_video'] ?? 'assets/videos/erklaerung.mp4')) ?>" type="video/mp4">
                 Dein Browser unterstützt kein HTML5-Video.
             </video>
         </div>
@@ -296,7 +325,6 @@ foreach ($logoFiles as $file) {
             <iframe
                 src="<?= htmlspecialchars((string) ($socials['tiktok_embed'] ?? '')) ?>"
                 title="Visitfy TikTok Video"
-                loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture;"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
