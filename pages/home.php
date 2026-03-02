@@ -16,6 +16,7 @@ $processSteps = $content['process_steps'] ?? [
     ['title' => 'Veröffentlichung', 'description' => 'Einbindung in Website, Maps und Social Channels.'],
 ];
 $references = $content['references'] ?? [];
+$testimonials = $content['testimonials'] ?? [];
 $faqs = $content['faqs'] ?? [];
 $team = $content['team'] ?? [
     [
@@ -241,6 +242,35 @@ foreach ($logoFiles as $file) {
                     <h3><?= htmlspecialchars((string) ($reference['name'] ?? '')) ?></h3>
                     <p class="reference-result"><?= htmlspecialchars((string) ($reference['result'] ?? '')) ?></p>
                     <p><?= htmlspecialchars((string) ($reference['description'] ?? '')) ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if ($testimonials !== []): ?>
+<section class="testimonials-section anim-section">
+    <div class="container">
+        <h2 class="reveal-up" style="--reveal-delay: 100ms;"><?= htmlspecialchars($home['testimonials_headline'] ?? 'Das sagen unsere Kunden') ?></h2>
+        <div class="testimonials-grid">
+            <?php foreach ($testimonials as $testimonial): ?>
+                <article class="testimonial-card reveal-up" style="--reveal-delay: 180ms;">
+                    <div class="testimonial-header">
+                        <h3><?= htmlspecialchars((string) ($testimonial['company'] ?? '')) ?></h3>
+                        <p class="testimonial-context"><?= htmlspecialchars((string) ($testimonial['context'] ?? '')) ?></p>
+                    </div>
+                    
+                    <div class="testimonial-ratings" aria-label="Bewertung: 5 von 5 Sternen">
+                        <div class="star-rating" aria-hidden="true">
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <span class="star filled">★</span>
+                            <?php endfor; ?>
+                        </div>
+                        <p class="rating-summary">5 von 5 Sternen</p>
+                    </div>
+                    
+                    <p class="testimonial-comment"><?= htmlspecialchars((string) ($testimonial['comment'] ?? '')) ?></p>
                 </article>
             <?php endforeach; ?>
         </div>
