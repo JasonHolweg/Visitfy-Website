@@ -6,47 +6,61 @@ $about = $content['about'] ?? [];
 $aboutImage = (string) ($about['image'] ?? '');
 ?>
 <section class="page about-page">
+    <div class="hero-bg" aria-hidden="true">
+        <div class="particle-layer hero-particles-layer" data-particles="30"></div>
+    </div>
     <div class="container about-container">
         <section class="about-hero-block">
-            <p class="about-eyebrow">About Us</p>
-            <h1>Über Visitfy</h1>
-            <h2>Wir machen Räume digital erlebbar.</h2>
-            <?php if ($aboutImage !== ''): ?>
-                <figure class="about-media">
-                    <img src="<?= htmlspecialchars($aboutImage) ?>" alt="Visitfy About Us Bild" loading="lazy">
-                </figure>
-            <?php endif; ?>
-            <div class="about-intro-copy">
-                <p>
-                    Visitfy ist mehr als ein Dienstleister - wir sind Gestalter digitaler Erlebnisse.
-                    Mit Leidenschaft für Ästhetik und modernste Technologie lassen wir Orte lebendig werden:
-                    Restaurants, Studios, Praxen, Hotels, Showrooms und besondere Locations jeder Art.
-                </p>
-                <p>
-                    Denn wir glauben daran, dass ein Raum mehr ist als nur vier Wände.
-                    Er ist Ausdruck einer Vision. Ein Erlebnis.
-                    Ein Ort, an dem Menschen entscheiden, verweilen, sich wohlfühlen oder wiederkommen.
-                </p>
-                <p>
-                    Mit unseren hochmodernen 360°-Rundgängen öffnen wir digitale Türen zu neuen Möglichkeiten.
-                    Ihre Kundinnen und Kunden erleben Ihre Location aus jedem Blickwinkel - realitätsnah,
-                    atmosphärisch und so intuitiv, als wären sie persönlich vor Ort.
-                </p>
-                <p>
-                    Neu bei Visitfy: Wir programmieren Webseiten für unsere Kundinnen und Kunden jetzt auch aus eigener Hand
-                    und passen sie individuell auf Zielgruppe, Design und konkrete Wünsche an.
-                    So entstehen digitale Auftritte, bei denen Rundgang und Website perfekt zusammenspielen.
-                </p>
-                <p>
-                    Sie spüren die Stimmung. Sie verstehen die Raumaufteilung.
-                    Sie entdecken Details, die den Unterschied machen.
-                    <strong>Visitfy verwandelt Räume in Erlebnisse - und Erlebnisse in Vertrauen.</strong>
-                </p>
+            <div class="about-hero-content">
+                <div class="hero-glass">
+                    <h1>Über Visitfy</h1>
+                    <h2>Wir machen Räume digital erlebbar.</h2>
+                    <?php if ($aboutImage !== ''): ?>
+                        <figure class="about-media">
+                            <img src="<?= htmlspecialchars($aboutImage) ?>" alt="Visitfy About Us Bild" loading="lazy">
+                        </figure>
+                    <?php endif; ?>
+                    <div class="about-intro-copy">
+                        <p>
+                            Visitfy ist mehr als ein Dienstleister - wir sind Gestalter digitaler Erlebnisse.
+                            Mit Leidenschaft für Ästhetik und modernste Technologie lassen wir Orte lebendig werden:
+                            Restaurants, Studios, Praxen, Hotels, Showrooms und besondere Locations jeder Art.
+                        </p>
+                        <p>
+                            Denn wir glauben daran, dass ein Raum mehr ist als nur vier Wände.
+                            Er ist Ausdruck einer Vision. Ein Erlebnis.
+                            Ein Ort, an dem Menschen entscheiden, verweilen, sich wohlfühlen oder wiederkommen.
+                        </p>
+                        <p>
+                            Mit unseren hochmodernen 360°-Rundgängen öffnen wir digitale Türen zu neuen Möglichkeiten.
+                            Ihre Kundinnen und Kunden erleben Ihre Location aus jedem Blickwinkel - realitätsnah,
+                            atmosphärisch und so intuitiv, als wären sie persönlich vor Ort.
+                        </p>
+                        <p>
+                            Neu bei Visitfy: Wir programmieren Webseiten für unsere Kundinnen und Kunden jetzt auch aus eigener Hand
+                            und passen sie individuell auf Zielgruppe, Design und konkrete Wünsche an.
+                            So entstehen digitale Auftritte, bei denen Rundgang und Website perfekt zusammenspielen.
+                        </p>
+                        <p>
+                            Sie spüren die Stimmung. Sie verstehen die Raumaufteilung.
+                            Sie entdecken Details, die den Unterschied machen.
+                            <strong>Visitfy verwandelt Räume in Erlebnisse - und Erlebnisse in Vertrauen.</strong>
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <section class="about-hero-section">
+            <div class="container about-hero-content">
+                <div class="hero-glass">
+                    <p class="eyebrow">Das Unterscheidungsmerkmal</p>
+                    <h2>Der Visitfy-Unterschied: Erleben statt nur sehen.</h2>
+                </div>
             </div>
         </section>
 
         <section class="about-section about-section-cards">
-            <h2>Der Visitfy-Unterschied: Erleben statt nur sehen.</h2>
+            <h2>Was uns auszeichnet</h2>
             <div class="about-card-grid about-card-grid-five">
             <article class="about-card info-card">
                 <div class="about-card-icon" aria-hidden="true">&hearts;</div>
