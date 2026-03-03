@@ -549,7 +549,7 @@ h1 {
 .btn {
   display: inline-block;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 12px;
   padding: .65rem 1rem;
   text-decoration: none;
   color: var(--text);
@@ -1978,6 +1978,14 @@ td {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.45rem;
+  }
+
+  .home-cta-person {
+    display: none;
+  }
+
+  .home-cta-wrap:has(.home-cta-person) {
+    grid-template-columns: 1fr;
   }
 
   .home-cta-wrap {

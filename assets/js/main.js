@@ -227,6 +227,21 @@
     });
   };
 
+  const initAnalytics = () => {
+    // Track Page View
+    const currentPage = new URLSearchParams(window.location.search).get('page') || 'home';
+    fetch(`api/track.php?action=pageView&page=${encodeURIComponent(currentPage)}`);
+
+    // Track CTA Button Clicks
+    document.querySelectorAll('.btn-primary, .btn-outline, .btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const buttonText = btn.textContent.trim();
+        const buttonId = btn.id || btn.className;
+        fetch(`api/track.php?action=buttonClick&id=${encodeURIComponent(buttonId)}&text=${encodeURIComponent(buttonText)}`);
+      });
+    });
+  };
+
   initThemeToggle();
   initMobileNav();
   initParticles();
@@ -234,4 +249,5 @@
   initScrollReveal();
   initCounters();
   initFAQ();
+  initAnalytics();
 })();
