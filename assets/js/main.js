@@ -80,6 +80,7 @@
     if (!layers.length) return;
 
     const shapes = ['sphere', 'triangle', 'diamond'];
+    const logoPath = 'assets/images/visitfy-logo.svg';
 
     layers.forEach((layer) => {
       if (heroAnimation === 'scan' && layer.classList.contains('hero-particles-layer')) {
@@ -91,12 +92,26 @@
 
       for (let i = 0; i < particleCount; i += 1) {
         const particle = document.createElement('span');
-        const shape = shapes[Math.floor(Math.random() * shapes.length)];
+        const isLogo = Math.random() < 0.08; // 8% der Partikel sind Logos
+        const shape = isLogo ? 'logo' : shapes[Math.floor(Math.random() * shapes.length)];
 
         particle.className = `particle ${shape}`;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
-        particle.style.setProperty('--size', `${Math.floor(Math.random() * 18) + 10}px`);
+        
+        if (isLogo) {
+          const img = document.createElement('img');
+          img.src = logoPath;
+          img.alt = 'Visitfy Logo';
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'contain';
+          particle.appendChild(img);
+          particle.style.setProperty('--size', `${Math.floor(Math.random() * 16) + 28}px`);
+        } else {
+          particle.style.setProperty('--size', `${Math.floor(Math.random() * 18) + 10}px`);
+        }
+        
         particle.style.setProperty('--duration', `${Math.floor(Math.random() * 10) + 10}s`);
         particle.style.setProperty('--delay', `${(Math.random() * -12).toFixed(2)}s`);
         particle.style.setProperty('--drift-x', `${Math.floor(Math.random() * 80) - 40}px`);
