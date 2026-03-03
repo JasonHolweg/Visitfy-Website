@@ -15,12 +15,8 @@ $aboutImage = (string) ($about['image'] ?? '');
                 <div class="hero-glass">
                     <h1>Über Visitfy</h1>
                     <h2>Wir machen Räume digital erlebbar.</h2>
-                    <?php if ($aboutImage !== ''): ?>
-                        <figure class="about-media">
-                            <img src="<?= htmlspecialchars($aboutImage) ?>" alt="Visitfy About Us Bild" loading="lazy">
-                        </figure>
-                    <?php endif; ?>
-                    <div class="about-intro-copy">
+                    <div class="about-hero-layout">
+                        <div class="about-intro-copy">
                         <p>
                             Visitfy ist mehr als ein Dienstleister - wir sind Gestalter digitaler Erlebnisse.
                             Mit Leidenschaft für Ästhetik und modernste Technologie lassen wir Orte lebendig werden:
@@ -28,7 +24,17 @@ $aboutImage = (string) ($about['image'] ?? '');
                         </p>
                         <p>
                             Denn wir glauben daran, dass ein Raum mehr ist als nur vier Wände.
-                            Er ist Ausdruck einer Vision. Ein Erlebnis.
+                                Er ist Ausdruck einer Vision. Ein Erlebnis.
+                            </p>
+                        </div>
+                        <?php if ($aboutImage !== ''): ?>
+                            <figure class="about-media-compact">
+                                <img src="<?= htmlspecialchars($aboutImage) ?>" alt="Visitfy Team" loading="lazy">
+                            </figure>
+                        <?php endif; ?>
+                    </div>
+                    <div class="about-intro-copy">
+                        <p>
                             Ein Ort, an dem Menschen entscheiden, verweilen, sich wohlfühlen oder wiederkommen.
                         </p>
                         <p>
@@ -59,10 +65,10 @@ $aboutImage = (string) ($about['image'] ?? '');
             </div>
         </section>
 
-        <section class="about-section about-section-cards">
-            <h2>Was uns auszeichnet</h2>
+        <section class="about-section about-section-cards anim-section">
+            <h2 class="reveal-up" style="--reveal-delay: 100ms;">Was uns auszeichnet</h2>
             <div class="about-card-grid about-card-grid-five">
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 180ms;">
                 <div class="about-card-icon" aria-hidden="true">&hearts;</div>
                 <h3>Emotionale Resonanz</h3>
                 <p>
@@ -71,7 +77,7 @@ $aboutImage = (string) ($about['image'] ?? '');
                     die Interessenten sofort und nachhaltig mit Ihrer Marke verbindet.
                 </p>
             </article>
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 260ms;">
                 <div class="about-card-icon" aria-hidden="true">&#9678;</div>
                 <h3>Visuelle Perfektion</h3>
                 <p>
@@ -79,7 +85,7 @@ $aboutImage = (string) ($about['image'] ?? '');
                     Ihre Räume werden authentisch, ästhetisch und im bestmöglichen Licht präsentiert.
                 </p>
             </article>
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 340ms;">
                 <div class="about-card-icon" aria-hidden="true">&#10022;</div>
                 <h3>Individuelle Ästhetik</h3>
                 <p>
@@ -88,7 +94,7 @@ $aboutImage = (string) ($about['image'] ?? '');
                     und Ihrer Zielgruppe passen.
                 </p>
             </article>
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 420ms;">
                 <div class="about-card-icon" aria-hidden="true">&#9873;</div>
                 <h3>Strategische Flexibilität</h3>
                 <p>
@@ -96,7 +102,7 @@ $aboutImage = (string) ($about['image'] ?? '');
                     Showrooms, Gastronomie, Praxen, Fitness, Hotels, Eventlocations und mehr.
                 </p>
             </article>
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 500ms;">
                 <div class="about-card-icon" aria-hidden="true">&#9733;</div>
                 <h3>Signifikante Reichweite</h3>
                 <p>
@@ -107,10 +113,10 @@ $aboutImage = (string) ($about['image'] ?? '');
             </div>
         </section>
 
-        <section class="about-section about-section-cards">
-            <h2>Perfektion in jedem Detail</h2>
+        <section class="about-section about-section-cards anim-section">
+            <h2 class="reveal-up" style="--reveal-delay: 100ms;">Perfektion in jedem Detail</h2>
             <div class="about-card-grid">
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 180ms;">
                 <div class="about-card-icon" aria-hidden="true">&#10024;</div>
                 <h3>Expertise, die beeindruckt</h3>
                 <p>
@@ -118,7 +124,7 @@ $aboutImage = (string) ($about['image'] ?? '');
                     mit einem ausgeprägten Gespür für Raumwirkung, Atmosphäre und Markeninszenierung.
                 </p>
             </article>
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 260ms;">
                 <div class="about-card-icon" aria-hidden="true">&#10003;</div>
                 <h3>Qualität ohne Kompromisse</h3>
                 <p>
@@ -126,7 +132,7 @@ $aboutImage = (string) ($about['image'] ?? '');
                     präziser Post-Production und außergewöhnlicher Liebe zum Detail.
                 </p>
             </article>
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 340ms;">
                 <div class="about-card-icon" aria-hidden="true">&#9990;</div>
                 <h3>Beratung auf höchstem Niveau</h3>
                 <p>
@@ -134,7 +140,7 @@ $aboutImage = (string) ($about['image'] ?? '');
                     Gemeinsam entwickeln wir ein Konzept, das perfekt zu Ihrem Unternehmen passt.
                 </p>
             </article>
-            <article class="about-card info-card">
+            <article class="about-card info-card reveal-up" style="--reveal-delay: 420ms;">
                 <div class="about-card-icon" aria-hidden="true">&#9889;</div>
                 <h3>Schnelle Umsetzung</h3>
                 <p>

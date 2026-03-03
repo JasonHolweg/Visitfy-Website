@@ -994,6 +994,64 @@ h1 {
   display: block;
 }
 
+.about-hero-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+}
+
+.about-media-compact {
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px) saturate(125%);
+  box-shadow: 0 12px 28px rgba(20, 38, 68, 0.1);
+  opacity: 0;
+  transform: translateX(64px);
+}
+
+.about-media-compact img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-hero-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+}
+
+.about-hero-block .about-media-compact {
+  animation: slideInFromRight 0.8s cubic-bezier(0.2, 0.65, 0.16, 1) 0.3s forwards;
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-media-compact {
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px) saturate(125%);
+  box-shadow: 0 12px 28px rgba(20, 38, 68, 0.1);
+}
+
 .about-card-grid-five {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
@@ -1068,10 +1126,10 @@ h1 {
 .about-hero-block {
   position: relative;
   z-index: 2;
-  min-height: 100svh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: 4rem 0 8.4rem;
+  padding: 3rem 0 2rem;
 }
 
 .about-hero-content {
@@ -1153,12 +1211,8 @@ html[data-theme="dark"] .about-hero-block .hero-glass {
 .about-hero-section {
   position: relative;
   overflow: hidden;
-  min-height: 45svh;
   display: flex;
   align-items: center;
-  padding: 6rem 0;
-  margin-top: 4.6rem;
-  margin-bottom: 0;
 }
 
 .about-hero-section .about-hero-content {
@@ -1841,6 +1895,17 @@ td {
     margin-top: 3.1rem;
   }
 
+  .about-hero-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .about-media-compact {
+    width: 200px;
+    height: 200px;
+  }
+
   .industry-tile.square,
   .industry-tile.wide,
   .industry-tile:nth-child(3),
@@ -1901,6 +1966,11 @@ td {
 
   .industries-alt.anim-section.is-visible .reveal.from-right {
     animation: reveal-right var(--reveal-duration-side) var(--reveal-ease) var(--reveal-delay, 0ms) both;
+  }
+
+  .about-media-compact {
+    width: 180px;
+    height: 180px;
   }
 
   .nav-wrap {
