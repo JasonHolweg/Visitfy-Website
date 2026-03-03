@@ -55,6 +55,8 @@ html[data-theme="dark"] .info-card,
 html[data-theme="dark"] .faq-item,
 html[data-theme="dark"] .testimonial-card,
 html[data-theme="dark"] .benefit-card,
+html[data-theme="dark"] .partner-cta,
+html[data-theme="dark"] .partner-cta-wrap,
 html[data-theme="dark"] .home-cta-wrap,
 html[data-theme="dark"] .mockup-card,
 html[data-theme="dark"] .desktop-video-wrap,
@@ -1400,6 +1402,9 @@ html[data-theme="dark"] .about-closing p {
   margin: 5rem 0;
   backdrop-filter: blur(12px);
   box-shadow: 0 16px 34px rgba(20, 38, 68, 0.09);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .partner-cta-content {
@@ -1432,10 +1437,19 @@ html[data-theme="dark"] .about-closing p {
   padding: 1.25rem;
   backdrop-filter: blur(12px);
   box-shadow: 0 16px 34px rgba(20, 38, 68, 0.09);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-cta-wrap:has(.home-cta-person) {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr minmax(180px, 260px);
-  align-items: center;
+}
+
+.home-cta-copy {
+  text-align: center;
 }
 
 .home-cta-copy p {
