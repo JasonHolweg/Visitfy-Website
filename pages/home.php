@@ -279,11 +279,16 @@ foreach ($logoFiles as $file) {
 <section class="home-faq anim-section">
     <div class="container">
         <h2 class="reveal-up" style="--reveal-delay: 100ms;"><?= htmlspecialchars($home['faq_headline'] ?? 'Häufige Fragen') ?></h2>
-        <div class="faq-list">
-            <?php foreach ($faqs as $faq): ?>
-                <article class="faq-item reveal-up" style="--reveal-delay: 180ms;">
-                    <h3><?= htmlspecialchars((string) ($faq['question'] ?? '')) ?></h3>
-                    <p><?= htmlspecialchars((string) ($faq['answer'] ?? '')) ?></p>
+        <div class="faq-list home-faq-list">
+            <?php foreach ($faqs as $index => $faq): ?>
+                <article class="faq-item reveal-up" style="--reveal-delay: <?= (($index + 1) * 80) ?>ms;" data-faq="<?= htmlspecialchars((string) ($index)) ?>">
+                    <button class="faq-toggle" aria-expanded="false" aria-controls="home-answer-<?= htmlspecialchars((string) ($index)) ?>">
+                        <h3><?= htmlspecialchars((string) ($faq['question'] ?? '')) ?></h3>
+                        <span class="faq-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer" id="home-answer-<?= htmlspecialchars((string) ($index)) ?>" role="region">
+                        <p><?= htmlspecialchars((string) ($faq['answer'] ?? '')) ?></p>
+                    </div>
                 </article>
             <?php endforeach; ?>
         </div>

@@ -1237,6 +1237,12 @@ html[data-theme="dark"] .about-closing p {
   gap: .8rem;
 }
 
+.home-faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
 .faq-hero {
   text-align: center;
   margin-bottom: 3rem;
@@ -1571,7 +1577,7 @@ html[data-theme="dark"] .faq-intro a {
   background: linear-gradient(125deg, rgba(225, 239, 255, 0.72), rgba(246, 250, 255, 0.78));
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 1.25rem;
+  padding: 2rem 1.5rem;
   backdrop-filter: blur(12px);
   box-shadow: 0 16px 34px rgba(20, 38, 68, 0.09);
   display: flex;
@@ -1581,16 +1587,27 @@ html[data-theme="dark"] .faq-intro a {
 
 .home-cta-wrap:has(.home-cta-person) {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr minmax(180px, 260px);
+  gap: 2rem;
+  grid-template-columns: 1fr minmax(180px, 280px);
+  padding: 2.5rem;
 }
 
 .home-cta-copy {
   text-align: center;
 }
 
+.home-cta-copy h2 {
+  margin-bottom: 1rem;
+}
+
 .home-cta-copy p {
-  margin-top: .3rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-cta-copy .btn {
+  display: inline-block;
+  max-width: 280px;
+  width: auto;
 }
 
 .home-cta-person {
@@ -1965,6 +1982,36 @@ td {
 
   .home-cta-wrap {
     grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+  }
+
+  .home-cta-wrap:has(.home-cta-person) {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .home-cta-copy h2 {
+    font-size: 1.4rem;
+  }
+
+  .home-cta-copy p {
+    font-size: 0.95rem;
+  }
+
+  .home-faq-list {
+    gap: 0.6rem;
+  }
+
+  .faq-toggle {
+    padding: 1rem;
+  }
+
+  .faq-toggle h3 {
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding-left: 1rem;
   }
 
   .footer-shell {
