@@ -211,10 +211,27 @@
     sections.forEach((section) => observer.observe(section));
   };
 
+  const initFAQ = () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!faqItems.length) return;
+
+    faqItems.forEach((item) => {
+      const toggle = item.querySelector('.faq-toggle');
+      if (!toggle) return;
+
+      toggle.addEventListener('click', () => {
+        const isExpanded = item.getAttribute('data-expanded') === 'true';
+        item.setAttribute('data-expanded', isExpanded ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+      });
+    });
+  };
+
   initThemeToggle();
   initMobileNav();
   initParticles();
   initLazyMedia();
   initScrollReveal();
   initCounters();
+  initFAQ();
 })();
